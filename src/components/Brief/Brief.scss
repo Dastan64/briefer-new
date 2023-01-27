@@ -1,0 +1,36 @@
+.brief {
+  margin-bottom: 56px;
+
+  &__text-container {
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 38px;
+    text-transform: uppercase;
+    color: #212427;
+  }
+
+  &__subtitle {
+    margin-bottom: 4px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #464C53;
+  }
+
+  &__warning {
+    font-size: 14px;
+    line-height: 16px;
+    color: #DF0613;
+  }
+
+  .form {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+
+  }
+}

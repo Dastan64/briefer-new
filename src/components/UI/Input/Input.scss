@@ -1,0 +1,52 @@
+.input-container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 9px;
+
+  &--wide {
+    grid-column: span 3;
+  }
+
+  .label {
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 24px;
+    color: #212427;
+
+    &__asterisk {
+      font-weight: 700;
+      color: #000;
+    }
+
+    &__error {
+      padding: 5px 8px;
+      border-radius: 4px;
+      background-color: #DF0613;
+      color: #fff;
+      font-size: 12px;
+      line-height: 14px;
+      font-weight: 700;
+    }
+  }
+}
+
+.input {
+  min-width: 400px;
+  padding: 16px;
+  border: 1px solid #FC6B3F;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 24px;
+
+  &--date {
+    cursor: default;
+    background: url('https://www.technodom.kz/under/briefer/calendar.svg') no-repeat right 16px center;
+  }
+
+  &::-webkit-input-placeholder {
+    color: #212427;
+  }
+}

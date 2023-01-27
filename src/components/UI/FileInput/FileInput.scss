@@ -1,0 +1,44 @@
+.input-container {
+
+  .label {
+
+    &__text {
+      width: 300px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .file-button {
+    min-width: 400px;
+    padding: 16px;
+    border: 1px solid #FC6B3F;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+    background-image: url("https://www.technodom.kz/under/briefer/paper-clip.svg");
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: right 16px center;
+    background-color: transparent;
+    text-align: left;
+
+    &--highlighted {
+      background-color: #fc6b3f;
+      color: #fff;
+      background-image: url("https://www.technodom.kz/under/briefer/paper-clip-white.svg");
+    }
+  }
+
+  .input {
+    &--file {
+      display: none;
+    }
+  }
+
+}
+

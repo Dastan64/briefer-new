@@ -1,0 +1,72 @@
+.section {
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+
+    &::before {
+      display: block;
+      width: 24px;
+      height: 100%;
+      content: attr(data-number);
+      font-size: 24px;
+      line-height: 29px;
+      color: #FC6B3F;
+    }
+
+    &--error {
+      color: #DF0613;
+    }
+  }
+
+  &--hidden {
+    max-height: 100px;
+    overflow: hidden;
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__toggle-btn {
+    cursor: pointer;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 16px;
+    font-family: "Museo", "Segoe UI", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #fff;
+    background-color: #F7666F;
+
+    &--toggled {
+      background-color: #4CAF50;
+    }
+  }
+
+  &__title-warning {
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: #DF0613;
+    color: #fff;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 700;
+    text-transform: none;
+  }
+
+  &__subtitle {
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #464C53;
+  }
+}
