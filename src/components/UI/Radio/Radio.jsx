@@ -10,6 +10,7 @@ const Radio = ({ variant, value, id, isChecked, subsectionId }) => {
             id,
             subsectionId,
             type: 'radio',
+            value,
         }));
     }
 

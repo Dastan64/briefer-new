@@ -9,7 +9,6 @@ const TaskSubSection = ({ subsection, parentIndex, index }) => {
         return acc + Number(item.taskTimeToCreate.toString().replace(/,/g, '.')) || 0
     }, 0), [tasks])
 
-
     return (
         <section className="subsection">
             <h3 className="subsection__title"

@@ -1,17 +1,17 @@
 import React from 'react';
 import './Input.scss';
 
-const Input = ({ label, name, placeholder, value, onChange, onBlur, isRequired }) => {
+const Input = ({ label, name, placeholder, id, value, onChange, onBlur, isRequired }) => {
 
     return (
         <div className="input-container">
-            <label htmlFor={name} className="label">{label}{isRequired &&
-                <span className="label__asterisk">*</span>}</label>
+            <label htmlFor={id} className="label">{label}
+                {isRequired && <span className="label__asterisk">*</span>}
+            </label>
             <input
                 value={value}
-                data-key={label}
                 name={name}
-                id={name}
+                id={id}
                 className="input"
                 placeholder={placeholder}
                 onChange={onChange}

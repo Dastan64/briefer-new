@@ -18,6 +18,7 @@ const Brief = () => {
             id: section?.subsections[0].id,
             tasks: section?.subsections[0]?.tasks,
         }
+
         return (
             <section className="brief">
                 <div className="brief__text-container">
@@ -29,8 +30,9 @@ const Brief = () => {
                 <form className="brief__form form">
                     {info?.tasks?.length > 0 && info?.tasks.map(input => {
                         if (input.taskType === 'input') {
-                            return <EnhancedInput name="client" label={input.taskTitle} isRequired={input.taskMandatory}
-                                                  placeholder="Вася Пупкин"
+                            return <EnhancedInput name={input.taskTitle} label={input.taskTitle}
+                                                  isRequired={input.taskMandatory}
+                                                  placeholder="Напишите сюда что-нибудь..."
                                                   key={input.id} id={input.id} subsectionId={info.id}/>
                         } else if (input.taskType === 'date') {
                             return <Datepicker label={input.taskTitle} key={input.id} id={input.id}
@@ -42,7 +44,7 @@ const Brief = () => {
                                            name={input.taskType} key={input.id} id={input.id} subsectionId={info.id}
                                            isRequired={input.taskMandatory}/>
                         } else if (input.taskType === 'textarea') {
-                            return <EnhancedTextarea name="description" label={input.taskTitle} key={input.id}
+                            return <EnhancedTextarea name={input.taskTitle} label={input.taskTitle} key={input.id}
                                                      id={input.id} subsectionId={info.id} isRequired={input.taskMandatory}/>
                         }
                         return <FileInput name="file" label={'Прикрепление файла'} key={12}

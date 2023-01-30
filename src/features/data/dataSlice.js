@@ -72,6 +72,7 @@ export const dataSlice = createSlice({
                             subsections: section.subsections.map(ss => {
                                 return {
                                     ...ss,
+                                    isMarked: !ss.isMarked,
                                     tasks: ss.tasks.map(t => {
                                         if (t.taskType === 'radio') {
                                             return {
@@ -130,6 +131,16 @@ export const selectAllSubsections = (state) => {
     const res = [];
     state.data.modifiedData.sections.slice(1).map(section => {
         return section.subsections.map(ss => res.push(ss))
+    })
+    return res;
+}
+
+export const selectAllCheckedTasks = (state) => {
+    const res = [];
+    state.data.modifiedData.sections.map(section => {
+        return section.subsections.map(ss => {
+            return ss.tasks.filter(task => task.isChecked).map(task => res.push(task));
+        })
     })
     return res;
 }

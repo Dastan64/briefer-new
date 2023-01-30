@@ -11,6 +11,7 @@ const Checkbox = ({ variant, value, id, isChecked, subsectionId }) => {
             id,
             subsectionId,
             type: 'checkbox',
+            value,
         }));
     }
 

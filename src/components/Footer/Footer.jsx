@@ -1,32 +1,44 @@
-import React, { useState } from 'react';
+import React, { useMemo } from 'react';
 import './Footer.scss';
 import { useSelector } from 'react-redux';
 import {
+    selectAllCheckedTasks,
     selectAllSubsections,
     selectFormMandatoryTasks,
     selectTotalTimeOfAllTasks
 } from '../../features/data/dataSlice';
 import { convertHoursToDays } from '../../utils/convertHoursToDays';
 import { declinate } from '../../utils/declinate';
+import { deleteKeys } from '../../utils/deleteKeys';
 
 const Footer = () => {
-    const [isValid, setIsValid] = useState(false);
-    const data = useSelector(state => state.data.modifiedData.sections);
     const formTasks = useSelector(selectFormMandatoryTasks);
     const allSubsections = useSelector(selectAllSubsections);
+    const allTasks = useSelector(selectAllCheckedTasks);
     const totalHours = useSelector(selectTotalTimeOfAllTasks);
 
-    if (formTasks && formTasks.length > 0 && allSubsections && allSubsections.length > 0) {
-        const isValid = formTasks.every(task => task.isChecked) && allSubsections.every(ss => ss.isMarked);
-        console.log(isValid)
-    }
+    const isValid = useMemo(() => {
+        return formTasks?.every(task => task.isChecked) && allSubsections?.every(ss => ss.isMarked);
+    }, [formTasks, allSubsections])
+
+    const res = allTasks.map(task => {
+        return deleteKeys(task);
+    })
+    //Тут будет отправка данных на эндпоинт
+
 
     return (
         <footer className="footer">
-            <p>Общее время
-                разработки: <span>{totalHours > 24 ? convertHoursToDays(totalHours) : `${totalHours} ${declinate(totalHours, 'hours')}`}</span>
-            </p>
-            <button className="footer__btn" type="button" disabled={!isValid}>Отправить бриф
+            <div className="footer__info">
+                <p className="footer__info-caption">Общее время
+                    разработки: <span>{totalHours > 24 ? convertHoursToDays(totalHours) : `${totalHours} ${declinate(totalHours, 'hours')}`}</span>
+                </p>
+                <p className="footer__warning">{!isValid && 'Не все поля заполнены'}</p>
+            </div>
+            <button
+                className="footer__btn"
+                disabled={!isValid}
+                type="button">Отправить бриф
             </button>
         </footer>
     );

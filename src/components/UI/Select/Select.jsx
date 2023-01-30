@@ -3,7 +3,7 @@ import './Select.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { checkTask } from '../../../features/data/dataSlice';
 
-const Select = ({ slugData, label, defaultValue, name, subsectionId, id, isRequired }) => {
+const Select = ({ slugData, label, defaultValue, subsectionId, id, isRequired }) => {
     const [slug] = useState(slugData.split('_').at(-1))
     const data = useSelector(state => state.data.data[slug]);
     const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const Select = ({ slugData, label, defaultValue, name, subsectionId, id, isRequi
                 value: selectedOption,
             }));
         }
-    }, [selectedOption, dispatch, name, id, subsectionId])
+    }, [selectedOption, dispatch, id, subsectionId])
 
     useEffect(() => {
         const filteredData = data?.length > 0 && data.filter(item => item.toLowerCase().includes(searchInputValue.toLowerCase()));
@@ -54,8 +54,9 @@ const Select = ({ slugData, label, defaultValue, name, subsectionId, id, isRequi
 
     return (
         <div className="input-container">
-            <span className="label">{label}{isRequired &&
-                <span className="label__asterisk">*</span>}</span>
+            <span className="label">{label}
+                {isRequired && <span className="label__asterisk">*</span>}
+            </span>
             <div className={`select ${isOpen ? 'select--active' : ''}`} ref={selectRef}>
                 <button type="button" className="select__btn" onClick={handleClick}>
                     <span>{selectedOption || defaultValue}</span>
