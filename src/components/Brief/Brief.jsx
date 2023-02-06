@@ -47,11 +47,9 @@ const Brief = () => {
                             return <EnhancedTextarea name={input.taskTitle} label={input.taskTitle} key={input.id}
                                                      id={input.id} subsectionId={info.id} isRequired={input.taskMandatory}/>
                         }
-                        return <FileInput name="file" label={'Прикрепление файла'} key={12}
-                                          id={12}/>
+                        return <FileInput name={input.taskTitle} label={input.taskTitle} key={input.id}
+                                          id={input.id} subsectionId={info.id} isRequired={input.taskMandatory}/>
                     })}
-                    <FileInput name="file" label={'Прикрепление файла'} key={12}
-                               id={12} placeholder={'Выберите файл с устройства'}/>
                 </form>
             </section>
         );

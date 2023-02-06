@@ -89,6 +89,28 @@ export const dataSlice = createSlice({
                     })
                 }
             }
+        },
+        clearAllTasks: (state) => {
+            return {
+                ...state,
+                modifiedData: {
+                    sections: state.modifiedData.sections.map(section => {
+                        return {
+                            ...section,
+                            subsections: section.subsections.map(ss => {
+                                return {
+                                    ...ss,
+                                    tasks: ss.tasks.map(t => ({
+                                        ...t,
+                                        isChecked: false,
+                                        value: '',
+                                    }))
+                                }
+                            })
+                        }
+                    })
+                }
+            }
         }
     },
     extraReducers(builder) {
@@ -153,5 +175,5 @@ export const selectTotalTimeOfAllTasks = (state) => {
     }).reduce((acc, current) => acc + current, 0)
 }
 
-export const { checkTask, checkNegativeTasksOnToggle } = dataSlice.actions;
+export const { checkTask, checkNegativeTasksOnToggle, clearAllTasks } = dataSlice.actions;
 export default dataSlice.reducer;

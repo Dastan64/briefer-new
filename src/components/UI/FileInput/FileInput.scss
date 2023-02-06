@@ -1,17 +1,5 @@
 .input-container {
 
-  .label {
-
-    &__text {
-      width: 300px;
-      display: -webkit-box;
-      -webkit-line-clamp: 1;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  }
-
   .file-button {
     min-width: 400px;
     padding: 16px;
@@ -31,6 +19,15 @@
       background-color: #fc6b3f;
       color: #fff;
       background-image: url("https://www.technodom.kz/under/briefer/paper-clip-white.svg");
+    }
+
+    &__text {
+      width: 300px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 

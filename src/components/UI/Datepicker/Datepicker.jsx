@@ -1,27 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Datepicker.scss';
 
 import 'flatpickr/dist/themes/material_green.css';
 import Flatpickr from 'react-flatpickr';
 import { Russian } from 'flatpickr/dist/l10n/ru.js'
 
-import { formatDates } from '../../../utils/formatDate';
+import { formatDate } from '../../../utils/formatDate';
 import { useDispatch } from 'react-redux';
 import { checkTask } from '../../../features/data/dataSlice';
 
 const Datepicker = ({ label, id, subsectionId, isRequired }) => {
-    const [value, setValue] = useState([]);
     const dispatch = useDispatch();
 
-    const handleChange = (date) => {
-        setValue([...value, date.at(-1)]);
-    };
-
-    const handleClose = () => {
+    const handleClose = (dates) => {
         dispatch(checkTask({
             id,
             subsectionId,
-            value: formatDates(value),
+            value: formatDate(dates),
         }))
     }
 
@@ -32,13 +27,11 @@ const Datepicker = ({ label, id, subsectionId, isRequired }) => {
             <Flatpickr
                 options={{
                     altInput: true,
-                    dateFormat: 'd.m.y',
                     locale: Russian,
                     mode: 'range',
-                    formatDate: formatDates,
+                    formatDate: formatDate,
                 }}
                 placeholder="4 ноября - 4 декабря"
-                onChange={handleChange}
                 onClose={handleClose}
             />
         </div>

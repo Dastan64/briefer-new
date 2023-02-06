@@ -1,8 +1,9 @@
 import React from 'react';
 import './TaskCard.scss';
 import Radio from '../UI/Radio/Radio';
-import { declinate } from '../../utils/declinate';
 import Checkbox from '../UI/Checkbox/Checkbox';
+
+import { declinate } from '../../utils/declinate';
 
 const TaskCard = ({ variant, task, subsectionId }) => {
     const { taskTitle, taskTimeToCreate, taskDescription, taskType, id, isChecked } = task;

@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react';
 import './Footer.scss';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
+    clearAllTasks,
     selectAllCheckedTasks,
     selectAllSubsections,
     selectFormMandatoryTasks,
@@ -16,6 +17,7 @@ const Footer = () => {
     const allSubsections = useSelector(selectAllSubsections);
     const allTasks = useSelector(selectAllCheckedTasks);
     const totalHours = useSelector(selectTotalTimeOfAllTasks);
+    const dispatch = useDispatch();
 
     const isValid = useMemo(() => {
         return formTasks?.every(task => task.isChecked) && allSubsections?.every(ss => ss.isMarked);
@@ -24,8 +26,22 @@ const Footer = () => {
     const res = allTasks.map(task => {
         return deleteKeys(task);
     })
-    //Тут будет отправка данных на эндпоинт
 
+    const handleClick = () => {
+        fetch('https://marketing-stage.technodom.kz/api/v1/promo_brief_constructor/add', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Basic Y29udGVudF9zZXJ2aWNlX2FjY291bnQ6aDRyZDJyM20zbWIzcnA0c3N3MHJk',
+            },
+            body: JSON.stringify({
+                data: res,
+            })
+        }).then(response => response.json()).then(data => {
+            console.log(data)
+            dispatch(clearAllTasks())
+        })
+    }
 
     return (
         <footer className="footer">
@@ -38,6 +54,7 @@ const Footer = () => {
             <button
                 className="footer__btn"
                 disabled={!isValid}
+                onClick={handleClick}
                 type="button">Отправить бриф
             </button>
         </footer>
