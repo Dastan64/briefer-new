@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2575b18e-83ef-431f-913e-881519a8a8d3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Brief/Brief.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Brief/Brief.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TaskSection/TaskSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskSection/TaskSection.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Datepicker/Datepicker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Datepicker/Datepicker.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/FileInput/FileInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/FileInput/FileInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/FileInput/FileInput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/FileInput/FileInput.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/data/dataSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/data/dataSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/formatDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/formatDate.js" afterDir="false" />
-    </list>
+    <list default="true" id="2575b18e-83ef-431f-913e-881519a8a8d3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,22 +34,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.3.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,6 +64,13 @@
       <workItem from="1675142134541" duration="34000" />
       <workItem from="1675329270901" duration="5650000" />
       <workItem from="1675395708730" duration="7422000" />
+      <workItem from="1675654751097" duration="3373000" />
+      <workItem from="1675658312375" duration="23000" />
+      <workItem from="1675761652774" duration="1094000" />
+      <workItem from="1675917038667" duration="3629000" />
+      <workItem from="1675923005210" duration="48000" />
+      <workItem from="1675934036180" duration="7477000" />
+      <workItem from="1675997781587" duration="295000" />
     </task>
     <servers />
   </component>

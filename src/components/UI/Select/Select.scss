@@ -6,12 +6,15 @@
     .select__content {
       opacity: 1;
       visibility: visible;
+      border: 1px solid #2196F3;
+      border-top: none;
     }
 
     .select__btn {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      border-bottom: 0;
+      border: 1px solid #2196F3;
+      border-bottom: none;
 
       img {
         transform: rotate(180deg);

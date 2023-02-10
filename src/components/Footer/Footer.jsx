@@ -20,15 +20,13 @@ const Footer = () => {
     const dispatch = useDispatch();
 
     const isValid = useMemo(() => {
-        return formTasks?.every(task => task.isChecked) && allSubsections?.every(ss => ss.isMarked);
+        return formTasks?.every(task => task.isChecked) && allSubsections.every(ss => ss.isMarked);
     }, [formTasks, allSubsections])
 
-    const res = allTasks.map(task => {
-        return deleteKeys(task);
-    })
+    const res = allTasks.map(task => deleteKeys(task))
 
     const handleClick = () => {
-        fetch('https://marketing-stage.technodom.kz/api/v1/promo_brief_constructor/add', {
+        fetch('https://marketing.technodom.kz/api/v1/promo_brief_constructor/add', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',

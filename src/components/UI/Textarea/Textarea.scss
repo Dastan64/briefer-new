@@ -9,4 +9,9 @@
   font-family: "Museo", "Segoe UI", sans-serif;
   color: #212427;
   resize: vertical;
+
+  &:focus {
+    border: 1px solid transparent;
+    outline: 2px solid #2196F3;
+  }
 }

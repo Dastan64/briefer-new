@@ -1,21 +1,29 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import './TaskCard.scss';
-import Radio from '../UI/Radio/Radio';
-import Checkbox from '../UI/Checkbox/Checkbox';
 
 import { declinate } from '../../utils/declinate';
+import { checkTask } from '../../features/data/dataSlice';
 
 const TaskCard = ({ variant, task, subsectionId }) => {
-    const { taskTitle, taskTimeToCreate, taskDescription, taskType, id, isChecked } = task;
+    const dispatch = useDispatch();
+    const { taskTitle, value, taskTimeToCreate, taskDescription, taskType, id, isChecked } = task;
+
+    const handleChange = ({ target }) => {
+        dispatch(checkTask({
+            id,
+            subsectionId,
+            type: taskType,
+            value,
+        }));
+    }
+
     return (
-        <div className={`card ${isChecked ? `card--${variant}` : ''}`}>
+        <label className={`card ${isChecked ? `card--${variant}` : ''}`}>
             <div className="card__container">
-                {taskType === 'radio' ?
-                    <Radio variant={variant} value={taskTitle} id={id} isChecked={isChecked}
-                           subsectionId={subsectionId}/>
-                    : <Checkbox variant={variant} value={taskTitle} id={id} isChecked={isChecked}
-                                subsectionId={subsectionId}/>
-                }
+                <input type={taskType} className="card__input" checked={isChecked}
+                       value={value} onChange={handleChange}/>
+                <span className={`card__box`}></span>
                 <div className="card__info">
                     <h3 className="card__title">{taskTitle}</h3>
                     {taskDescription && <p className="card__description">{taskDescription}</p>}
@@ -26,7 +34,7 @@ const TaskCard = ({ variant, task, subsectionId }) => {
                     }
                 </div>
             </div>
-        </div>
+        </label>
     );
 };
 
