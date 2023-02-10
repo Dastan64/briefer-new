@@ -11,7 +11,6 @@ const initialState = {
     modifiedData: {
         sections: [],
     },
-    totalTime: 0,
     status: 'idle',
 };
 
@@ -30,7 +29,7 @@ export const dataSlice = createSlice({
                                 if (ss.id === payload.subsectionId) {
                                     return {
                                         ...ss,
-                                        isMarked: !ss.isMarked,
+                                        isMarked: true,
                                         tasks: ss.tasks.map(task => {
                                             if (task.id === payload.id) {
                                                 return {
