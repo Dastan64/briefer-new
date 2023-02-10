@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="2575b18e-83ef-431f-913e-881519a8a8d3" name="Changes" comment="" />
+=======
+    <list default="true" id="2575b18e-83ef-431f-913e-881519a8a8d3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskCard/Task.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskCard/TaskCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskCard/TaskCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskCard/TaskCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskCard/TaskCard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Checkbox/Checkbox.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Checkbox/Checkbox.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Input/Input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Input/Input.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Radio/Radio.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Radio/Radio.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Select/Select.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Select/Select.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/data/dataSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/data/dataSlice.js" afterDir="false" />
+    </list>
+>>>>>>> 76a4ec2dddc3f26a7c5f6aa492b6b033e8a12cd7
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +89,11 @@
       <workItem from="1675917038667" duration="3629000" />
       <workItem from="1675923005210" duration="48000" />
       <workItem from="1675934036180" duration="7477000" />
+<<<<<<< HEAD
       <workItem from="1675997781587" duration="295000" />
+=======
+      <workItem from="1675997781587" duration="265000" />
+>>>>>>> 76a4ec2dddc3f26a7c5f6aa492b6b033e8a12cd7
     </task>
     <servers />
   </component>
