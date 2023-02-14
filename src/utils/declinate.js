@@ -6,5 +6,5 @@ export const declinate = (number, type) => {
         adjectives: ['рабочий', 'рабочих', 'рабочих']
     }
     const cases = [2, 0, 1, 1, 1, 2];
-    return data[type][(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
+    return data[type][(Math.floor(number) % 100 > 4 && Math.floor(number) % 100 < 20) ? 2 : cases[(Math.floor(number) % 10 < 5) ? Math.floor(number) % 10 : 5]];
 }

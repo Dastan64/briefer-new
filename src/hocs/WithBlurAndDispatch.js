@@ -8,13 +8,14 @@ const WithBlurAndDispatch = (Component) => {
         const [hasBlurred, setHasBlurred] = useState(false);
         const [inputValue, setInputValue] = useState('');
         const dispatch = useDispatch();
-        const handleBlur = () => setHasBlurred(!hasBlurred);
+        const handleBlur = () => setHasBlurred(true);
+        const handleFocus = () => setHasBlurred(false);
         const handleChange = ({ target }) => {
             setInputValue(target.value);
         }
 
         useEffect(() => {
-            if (hasBlurred && inputValue) {
+            if (hasBlurred) {
                 dispatch(checkTask({
                     id,
                     subsectionId,
@@ -23,7 +24,8 @@ const WithBlurAndDispatch = (Component) => {
             }
         }, [id, subsectionId, hasBlurred, inputValue, dispatch, name])
 
-        return <Component {...props} onBlur={handleBlur} onChange={handleChange} value={inputValue}/>
+        return <Component {...props} onBlur={handleBlur} onChange={handleChange} onFocus={handleFocus}
+                          value={inputValue}/>
     }
 
     return NewComponent;

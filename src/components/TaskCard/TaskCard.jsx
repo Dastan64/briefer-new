@@ -9,7 +9,7 @@ const TaskCard = ({ variant, task, subsectionId }) => {
     const dispatch = useDispatch();
     const { taskTitle, value, taskTimeToCreate, taskDescription, taskType, id, isChecked } = task;
 
-    const handleChange = ({ target }) => {
+    const handleChange = () => {
         dispatch(checkTask({
             id,
             subsectionId,

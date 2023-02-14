@@ -17,6 +17,7 @@ const Datepicker = ({ label, id, subsectionId, isRequired }) => {
             id,
             subsectionId,
             value: formatDate(dates),
+            type: 'date',
         }))
     }
 

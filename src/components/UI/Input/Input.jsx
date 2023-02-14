@@ -1,7 +1,7 @@
 import React from 'react';
 import './Input.scss';
 
-const Input = ({ label, name, placeholder, id, value, onChange, onBlur, isRequired }) => {
+const Input = ({ label, name, placeholder, id, value, onChange, onBlur, onFocus, isRequired }) => {
 
     return (
         <div className="input-container">
@@ -15,6 +15,7 @@ const Input = ({ label, name, placeholder, id, value, onChange, onBlur, isRequir
                 className="input"
                 placeholder={placeholder}
                 onChange={onChange}
+                onFocus={onFocus}
                 onBlur={onBlur}
             />
         </div>

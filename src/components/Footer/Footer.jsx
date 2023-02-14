@@ -20,7 +20,7 @@ const Footer = () => {
     const dispatch = useDispatch();
 
     const isValid = useMemo(() => {
-        return formTasks?.every(task => task.isChecked) && allSubsections.every(ss => ss.isMarked);
+        return formTasks?.every(task => task.isChecked) && allSubsections.every(ss => ss.tasks.some(t => t.isChecked));
     }, [formTasks, allSubsections])
 
     const res = allTasks.map(task => deleteKeys(task))
@@ -37,7 +37,6 @@ const Footer = () => {
             })
         }).then(response => response.json()).then(data => {
             console.log(data)
-            dispatch(clearAllTasks())
         })
     }
 

@@ -29,12 +29,11 @@ export const dataSlice = createSlice({
                                 if (ss.id === payload.subsectionId) {
                                     return {
                                         ...ss,
-                                        isMarked: true,
                                         tasks: ss.tasks.map(task => {
                                             if (task.id === payload.id) {
                                                 return {
                                                     ...task,
-                                                    isChecked: !task.isChecked,
+                                                    isChecked: payload.type === 'date' ? true : !task.isChecked,
                                                     value: payload?.value,
                                                 }
                                             } else {
@@ -71,7 +70,6 @@ export const dataSlice = createSlice({
                             subsections: section.subsections.map(ss => {
                                 return {
                                     ...ss,
-                                    isMarked: !ss.isMarked,
                                     tasks: ss.tasks.map(t => {
                                         if (t.taskType === 'radio') {
                                             return {
@@ -79,7 +77,10 @@ export const dataSlice = createSlice({
                                                 isChecked: !t.isChecked,
                                             }
                                         } else {
-                                            return t;
+                                            return {
+                                                ...t,
+                                                isChecked: false,
+                                            };
                                         }
                                     })
                                 }
@@ -131,7 +132,7 @@ export const dataSlice = createSlice({
                         tasks: ss.tasks.map(task => ({
                             ...task,
                             isChecked: false,
-                            value: '',
+                            value: task.taskTitle,
                             id: nanoid(),
                             taskVariant: task.taskTitle !== 'Не требуется' ? 'positive' : 'negative'
                         }))
