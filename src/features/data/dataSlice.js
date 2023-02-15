@@ -11,6 +11,7 @@ const initialState = {
     modifiedData: {
         sections: [],
     },
+    brief_id: null,
     status: 'idle',
 };
 
@@ -111,7 +112,10 @@ export const dataSlice = createSlice({
                     })
                 }
             }
-        }
+        },
+        setBriefId: (state, { payload }) => {
+            state.brief_id = payload;
+        },
     },
     extraReducers(builder) {
         builder
@@ -175,5 +179,5 @@ export const selectTotalTimeOfAllTasks = (state) => {
     }).reduce((acc, current) => acc + current, 0)
 }
 
-export const { checkTask, checkNegativeTasksOnToggle, clearAllTasks } = dataSlice.actions;
+export const { checkTask, checkNegativeTasksOnToggle, clearAllTasks, setBriefId } = dataSlice.actions;
 export default dataSlice.reducer;

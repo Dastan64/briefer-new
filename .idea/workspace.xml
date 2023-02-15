@@ -6,13 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="a1a68586-b2cf-49b9-80b9-595f3b9639a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Brief/Brief.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Brief.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Brief/Brief.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Brief.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TaskCard/TaskCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskCard/TaskCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Datepicker/Datepicker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Datepicker/Datepicker.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Input/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Input/Input.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/data/dataSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/data/dataSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hocs/WithBlurAndDispatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocs/WithBlurAndDispatch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/declinate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/declinate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +30,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2LXVoNY1L26vRe34Yd5ZuNcSdoj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -44,6 +48,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.3.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -57,7 +62,8 @@
       <updated>1676017589608</updated>
       <workItem from="1676017591026" duration="1849000" />
       <workItem from="1676347362637" duration="8832000" />
-      <workItem from="1676360601235" duration="6160000" />
+      <workItem from="1676360601235" duration="11328000" />
+      <workItem from="1676434622243" duration="2153000" />
     </task>
     <servers />
   </component>

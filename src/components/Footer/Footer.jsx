@@ -2,17 +2,18 @@ import React, { useMemo } from 'react';
 import './Footer.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    clearAllTasks,
     selectAllCheckedTasks,
     selectAllSubsections,
     selectFormMandatoryTasks,
-    selectTotalTimeOfAllTasks
+    selectTotalTimeOfAllTasks, setBriefId
 } from '../../features/data/dataSlice';
 import { convertHoursToDays } from '../../utils/convertHoursToDays';
 import { declinate } from '../../utils/declinate';
 import { deleteKeys } from '../../utils/deleteKeys';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+    const navigate = useNavigate();
     const formTasks = useSelector(selectFormMandatoryTasks);
     const allSubsections = useSelector(selectAllSubsections);
     const allTasks = useSelector(selectAllCheckedTasks);
@@ -35,8 +36,19 @@ const Footer = () => {
             body: JSON.stringify({
                 data: res,
             })
-        }).then(response => response.json()).then(data => {
-            console.log(data)
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error(response.status);
+            } else {
+                return response.json()
+            }
+        }).then(data => {
+            if (data.brief_id) {
+                dispatch(setBriefId(data.brief_id));
+                navigate('/success');
+            }
+        }).catch(error => {
+            console.log(error);
         })
     }
 

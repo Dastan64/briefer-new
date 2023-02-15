@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.scss';
 
-import Brief from '../Brief/Brief';
+import Brief from '../Form/Brief';
 import TaskSection from '../TaskSection/TaskSection';
 import Footer from '../Footer/Footer';
 
