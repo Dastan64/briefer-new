@@ -32,6 +32,12 @@
     font-display: swap;
 }
 
+#root {
+    max-width: 1232px;
+    margin: 0 auto 0;
+    font-family: "Museo", "Segoe UI", sans-serif;
+}
+
 .flatpickr-current-month .flatpickr-monthDropdown-months, .flatpickr-current-month input.cur-year, .flatpickr-calendar {
     font-family: "Museo", "Segoe UI", sans-serif !important;
 }

@@ -6,14 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="a1a68586-b2cf-49b9-80b9-595f3b9639a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Brief/Brief.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Brief.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Brief/Brief.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Brief.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/data/dataSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/data/dataSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/Brief.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/Brief.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Root/Root.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Root/Root.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Success/Success.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Success/Success.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,7 @@
       <workItem from="1676017591026" duration="1849000" />
       <workItem from="1676347362637" duration="8832000" />
       <workItem from="1676360601235" duration="11328000" />
-      <workItem from="1676434622243" duration="2153000" />
+      <workItem from="1676434622243" duration="4325000" />
     </task>
     <servers />
   </component>

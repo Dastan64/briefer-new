@@ -7,34 +7,24 @@ const Success = () => {
     const id = useSelector(state => state.data.brief_id);
 
     return (
-        <div className="app">
-            <header>
-                <figure className="app__logo-container">
-                    <img
-                        src="https://www.technodom.kz/under/briefer/brief-logo.svg"
-                        alt="TechnoBrief | Брифуем с любовью"
-                    />
-                </figure>
-            </header>
-            <main className="success">
-                <div className="success__thumb thumb">
-                    <p className="thumb__id"><span className="thumb__id-orange-part">ID брифа:</span> {id}</p>
-                    <div className="thumb__container">
-                        <img src="https://www.technodom.kz/under/briefer/success-tick.svg" alt=""/>
-                        <div className="thumb__text-container">
-                            <span className="thumb__title">Готово!</span>
-                            <p className="thumb__text">Ваше бриф принят и когда нибудь, да когда нибудь будет
-                                выполнен </p>
-                        </div>
+        <main className="success">
+            <div className="success__thumb thumb">
+                <p className="thumb__id"><span className="thumb__id-orange-part">ID брифа:</span> {id}</p>
+                <div className="thumb__container">
+                    <img src="https://www.technodom.kz/under/briefer/success-tick.svg" alt=""/>
+                    <div className="thumb__text-container">
+                        <span className="thumb__title">Готово!</span>
+                        <p className="thumb__text">Ваше бриф принят и когда нибудь, да когда нибудь будет
+                            выполнен </p>
                     </div>
                 </div>
-                <div className="success__nav-links">
-                    <Link className="link" to={`/brief/${id}`}>Посмотреть бриф</Link>
-                    <Link className="link" to={'/briefs'}>Перейти ко всем брифам</Link>
-                    <Link className="link" to={'/'}>Создать новый бриф</Link>
-                </div>
-            </main>
-        </div>
+            </div>
+            <div className="success__nav-links">
+                <Link className="link" to={`/briefs/${id}`}>Посмотреть бриф</Link>
+                <Link className="link" to={'/briefs'}>Перейти ко всем брифам</Link>
+                <Link className="link" to={'/'}>Создать новый бриф</Link>
+            </div>
+        </main>
     );
 };
 

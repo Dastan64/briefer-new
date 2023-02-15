@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import './Brief.scss';
+import './Form.scss';
 
 import Input from '../UI/Input/Input';
 import Select from '../UI/Select/Select';
@@ -12,7 +12,7 @@ import FileInput from '../UI/FileInput/FileInput';
 const EnhancedTextarea = WithBlurAndDispatch(Textarea);
 const EnhancedInput = WithBlurAndDispatch(Input);
 
-const Brief = () => {
+const Form = () => {
         const section = useSelector(state => state.data.modifiedData.sections[0]);
         const info = {
             id: section?.subsections[0].id,
@@ -56,4 +56,4 @@ const Brief = () => {
     }
 ;
 
-export default Brief;
+export default Form;

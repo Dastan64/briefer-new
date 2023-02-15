@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.scss';
 
-import Brief from '../Form/Brief';
+import Form from '../Form/Form';
 import TaskSection from '../TaskSection/TaskSection';
 import Footer from '../Footer/Footer';
 
@@ -18,16 +18,8 @@ const App = () => {
 
     return (
         <div className="app">
-            <header>
-                <figure className="app__logo-container">
-                    <img
-                        src="https://www.technodom.kz/under/briefer/brief-logo.svg"
-                        alt="TechnoBrief | Брифуем с любовью"
-                    />
-                </figure>
-            </header>
             <main className="app__main">
-                <Brief/>
+                <Form/>
                 {data.sections?.length > 0 && data.sections.slice(1).map((section, index) =>
                     <TaskSection
                         section={section}
