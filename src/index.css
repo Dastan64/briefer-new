@@ -38,6 +38,10 @@
     font-family: "Museo", "Segoe UI", sans-serif;
 }
 
+input, button {
+    font-family: "Museo", "Segoe UI", sans-serif;
+}
+
 .flatpickr-current-month .flatpickr-monthDropdown-months, .flatpickr-current-month input.cur-year, .flatpickr-calendar {
     font-family: "Museo", "Segoe UI", sans-serif !important;
 }

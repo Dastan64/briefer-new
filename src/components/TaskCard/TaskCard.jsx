@@ -7,8 +7,7 @@ import { checkTask } from '../../features/data/dataSlice';
 
 const TaskCard = ({ variant, task, subsectionId }) => {
     const dispatch = useDispatch();
-    const { taskTitle, value, taskTimeToCreate, taskDescription, taskType, id, isChecked } = task;
-
+    const { taskTitle, value, taskTimeToCreate, taskDescription, taskType, id, isChecked, isDisabled } = task;
     const handleChange = () => {
         dispatch(checkTask({
             id,
@@ -19,10 +18,11 @@ const TaskCard = ({ variant, task, subsectionId }) => {
     }
 
     return (
-        <label className={`card ${isChecked ? `card--${variant}` : ''}`}>
+        <label
+            className={`card ${variant ? `card_type_${variant}` : ''} ${isChecked ? `card_type_${variant}_checked` : ''} ${isDisabled ? `card_disabled` : ''} ${value.toLowerCase() === 'не требуется' ? 'card_type_negative_disabled' : ''}`}>
             <div className="card__container">
-                <input type={taskType} className="card__input" checked={isChecked}
-                       value={value} onChange={handleChange}/>
+                <input type={taskType} className="card__input" checked={!isDisabled ? isChecked : true}
+                       value={value} onChange={handleChange} disabled={isDisabled}/>
                 <span className={`card__box`}></span>
                 <div className="card__info">
                     <h3 className="card__title">{taskTitle}</h3>

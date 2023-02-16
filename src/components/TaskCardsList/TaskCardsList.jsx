@@ -4,7 +4,7 @@ import TaskCard from '../TaskCard/TaskCard';
 
 const TaskCardsList = ({ tasks, subsectionId }) => {
     return (
-        <div className="cards-list">
+        <div className="subsection__cards-list cards-list">
             {tasks.map(task => <TaskCard variant={task.taskVariant} task={task} key={task.id}
                                          subsectionId={subsectionId}/>)}
         </div>

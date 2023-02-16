@@ -24,8 +24,7 @@
     color: #212427;
 
     &::before {
-      display: block;
-      width: 32px;
+      min-width: 32px;
       height: 100%;
       content: attr(data-number);
       font-size: 18px;
@@ -45,9 +44,12 @@
   }
 
   &__subtitle {
-    margin-bottom: 24px;
     font-size: 14px;
     line-height: 20px;
     color: #464C53;
+  }
+
+  &__cards-list {
+    margin-top: 24px;
   }
 }

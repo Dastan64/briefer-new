@@ -1,0 +1,25 @@
+.result {
+  padding-bottom: 120px;
+
+  &__time {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #d9dcde;
+    font-size: 18px;
+    line-height: 24px;
+
+    &--bolder {
+      font-weight: 900;
+    }
+  }
+
+  &__fields {
+    margin-top: 24px;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__options {
+    margin-top: 56px;
+  }
+}

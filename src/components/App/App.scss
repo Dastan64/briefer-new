@@ -1,9 +1,4 @@
 .app {
-
-  input, button {
-    font-family: "Museo", "Segoe UI", sans-serif;
-  }
-
   &__section {
     &:not(:last-child) {
       margin-bottom: 40px;

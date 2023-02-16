@@ -5,6 +5,15 @@
   background-color: #F1FFF5;
   border-radius: 8px;
 
+  &_disabled {
+    background-color: #F4F4F4;
+
+    .card__time {
+      background-color: #fff;
+      color: #4CAF50;
+    }
+  }
+
   &__input {
     position: absolute;
     -webkit-appearance: none;
@@ -47,24 +56,26 @@
     background-color: transparent;
   }
 
-  &:not(.card--positive):hover {
-    background-color: #E4FBEA;
-  }
-
-  &:last-child {
+  &_type_negative {
     background-color: #FFF3F3;
 
     .card__box {
       border: 1px solid #F7666F;
     }
 
-    &:hover {
-      background-color: #FFE8E9;
+    &:not(.card_type_negative_checked):hover {
+      background-color: #ffe8e9;
     }
   }
 
-  &--negative {
-    background: #F88C93 !important;
+  &_type_positive {
+    &:not(.card_type_positive_checked):hover {
+      background-color: #e4fbea;
+    }
+  }
+
+  &_type_negative_checked {
+    background: #F88C93;
     color: #F4F4F4;
 
     .card__title {
@@ -85,7 +96,18 @@
     }
   }
 
-  &--positive {
+  &_type_negative_disabled {
+    .card__input {
+      &:checked {
+        + .card__box {
+          border: none;
+          background-image: url("https://www.technodom.kz/under/briefer/cross.svg");
+        }
+      }
+    }
+  }
+
+  &_type_positive_checked {
     background: #4CAF50;
     color: #f4f4f4;
 

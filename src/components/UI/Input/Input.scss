@@ -41,6 +41,15 @@
   font-size: 16px;
   line-height: 24px;
 
+  &:not(.form-control):read-only {
+    border: 1px solid #D9DCDE;
+    cursor: auto;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
   &:focus {
     border: 1px solid transparent;
     outline: 2px solid #2196F3;

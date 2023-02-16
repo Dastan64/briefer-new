@@ -127,6 +127,7 @@ export const dataSlice = createSlice({
                 state.data = payload;
                 state.modifiedData.sections = payload.sections.map(section => ({
                     ...section,
+                    required: true,
                     id: nanoid()
                 })).map(s => ({
                     ...s,
