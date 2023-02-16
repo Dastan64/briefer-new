@@ -10,6 +10,7 @@ export const sendFiles = (filesCollection, callback) => {
             },
             body: formData,
         }).then(response => response.json()).then(data => {
+            console.log(data.uuid);
             res.push(data.uuid)
             callback(res);
         })

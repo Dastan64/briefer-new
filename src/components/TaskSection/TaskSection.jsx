@@ -30,7 +30,7 @@ const TaskSection = ({ section, parentIndex }) => {
                             onClick={handleClick}>{isToggled ? 'Нужно' : 'Не нужно'}
                     </button>}
                 {(isDisabled && !required) && (
-                    <label className="card   card_disabled card_type_negative_disabled">
+                    <label className="card card_disabled card_type_negative_disabled">
                         <div className="card__container">
                             <input type="radio" className="card__input" disabled value="Не требуется" checked/>
                             <span className="card__box"></span>

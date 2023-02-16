@@ -10,6 +10,7 @@ import { declinate } from '../../utils/declinate';
 //Components
 import Input from '../../components/UI/Input/Input';
 import TaskSection from '../../components/TaskSection/TaskSection';
+import FileInfoInput from '../../components/FileInfoInput/FileInfoInput';
 
 const Brief = () => {
         const { id } = useParams();
@@ -30,9 +31,13 @@ const Brief = () => {
                 </p>
                 <div className="result__fields">
                     {tasks.filter(task => task.taskType !== 'radio' && task.taskType !== 'checkbox').map(task => {
+                        if (task.taskType === 'file') {
+                            return <FileInfoInput task={task} key={uuidv4()}/>
+                        }
                         return <Input name={task.taskTitle} label={task.taskTitle}
                                       value={task.value}
                                       key={uuidv4()} id={task.id} isDisabled={true}/>
+
                     })}
                 </div>
                 <div className="result__options">

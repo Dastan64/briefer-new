@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './FileInput.scss';
-import { sendFiles } from '../../../utils/sendFiles';
 import { useDispatch } from 'react-redux';
+import './FileInput.scss';
+
+import { sendFiles } from '../../../utils/sendFiles';
 import { checkTask } from '../../../features/data/dataSlice';
 
 const FileInput = ({ label, name, isRequired, id, subsectionId }) => {
@@ -34,7 +35,9 @@ const FileInput = ({ label, name, isRequired, id, subsectionId }) => {
 
     const handleClick = () => {
         inputRef.current.click();
+        setFileIds([]);
     }
+
     return (
         <div className="input-container">
             <label htmlFor={name} className="label label--file">{label}:
@@ -43,7 +46,6 @@ const FileInput = ({ label, name, isRequired, id, subsectionId }) => {
             <input
                 type="file"
                 value={value}
-                data-key={label}
                 name={name}
                 ref={inputRef}
                 id={name}
