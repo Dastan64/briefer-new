@@ -12,10 +12,7 @@ const FileInput = ({ label, name, isRequired, id, subsectionId }) => {
     const inputRef = useRef(null);
     const dispatch = useDispatch();
 
-    const callback = (uuidsArray) => {
-        const arr = [...uuidsArray];
-        setFileIds([...fileIds, ...arr.splice(0)])
-    }
+    const callback = (uuidsArray) => setFileIds(uuidsArray)
 
     useEffect(() => {
         if (fileIds.length > 0) {
