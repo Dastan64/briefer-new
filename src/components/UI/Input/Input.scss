@@ -54,6 +54,14 @@
     }
   }
 
+  &_type_budget {
+    background-image: url("https://new.technodom.kz/under/briefer/tenge.svg");
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: right 16px center;
+    padding-right: 48px;
+  }
+
   &:focus {
     border: 1px solid transparent;
     outline: 2px solid #2196F3;

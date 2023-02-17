@@ -4,14 +4,19 @@ import { checkTask } from '../features/data/dataSlice';
 
 const WithBlurAndDispatch = (Component) => {
     function NewComponent(props) {
-        const { id, subsectionId } = props;
+        const { name, id, subsectionId } = props;
         const [hasBlurred, setHasBlurred] = useState(false);
         const [inputValue, setInputValue] = useState('');
         const dispatch = useDispatch();
         const handleBlur = () => setHasBlurred(true);
         const handleFocus = () => setHasBlurred(false);
         const handleChange = ({ target }) => {
-            setInputValue(target.value);
+            if (name.toLowerCase().includes('бюджет')) {
+                const formattedValue = Number(target.value.replace(/\D/g, '')).toLocaleString();
+                setInputValue(formattedValue);
+            } else {
+                setInputValue(target.value);
+            }
         }
 
         useEffect(() => {
