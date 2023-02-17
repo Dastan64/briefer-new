@@ -4,7 +4,7 @@ import { checkTask } from '../features/data/dataSlice';
 
 const WithBlurAndDispatch = (Component) => {
     function NewComponent(props) {
-        const { name, id, subsectionId } = props;
+        const { id, subsectionId } = props;
         const [hasBlurred, setHasBlurred] = useState(false);
         const [inputValue, setInputValue] = useState('');
         const dispatch = useDispatch();
@@ -15,14 +15,14 @@ const WithBlurAndDispatch = (Component) => {
         }
 
         useEffect(() => {
-            if (hasBlurred) {
+            if (hasBlurred && inputValue) {
                 dispatch(checkTask({
                     id,
                     subsectionId,
                     value: inputValue,
                 }))
             }
-        }, [id, subsectionId, hasBlurred, inputValue, dispatch, name])
+        }, [id, subsectionId, hasBlurred, inputValue, dispatch])
 
         return <Component {...props} onBlur={handleBlur} onChange={handleChange} onFocus={handleFocus}
                           value={inputValue}/>

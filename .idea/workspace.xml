@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a1a68586-b2cf-49b9-80b9-595f3b9639a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/FileInput/FileInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/FileInput/FileInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hocs/WithBlurAndDispatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocs/WithBlurAndDispatch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Success/Success.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Success/Success.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/sendFiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sendFiles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +64,7 @@
       <workItem from="1676434622243" duration="21858000" />
       <workItem from="1676517378086" duration="19142000" />
       <workItem from="1676547628135" duration="131000" />
-      <workItem from="1676548470173" duration="1980000" />
+      <workItem from="1676548470173" duration="6348000" />
     </task>
     <servers />
   </component>
