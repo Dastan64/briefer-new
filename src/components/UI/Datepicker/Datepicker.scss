@@ -12,4 +12,8 @@
   background-image: url("https://www.technodom.kz/under/briefer/calendar.svg");
   background-repeat: no-repeat;
   background-position: right 16px center;
+
+  &::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
 }

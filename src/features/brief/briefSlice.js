@@ -59,7 +59,7 @@ export const briefSlice = createSlice({
             }, []).map(section => {
                 return {
                     ...section,
-                    required: section.subsections.every(ss => ss.tasks.every(task => task.value.toLowerCase() !== 'не требуется'))
+                    required: section.subsections.some(ss => ss.tasks.every(task => task.value.toLowerCase() !== 'не требуется'))
                 }
             });
 
