@@ -23,7 +23,7 @@ const TaskCard = ({ variant, task, subsectionId }) => {
             <div className="card__container">
                 <input type={taskType} className="card__input" checked={!isDisabled ? isChecked : true}
                        value={value} onChange={handleChange} disabled={isDisabled}/>
-                <span className={`card__box`}></span>
+                <span className={`card__box ${isDisabled ? 'card__box--disabled' : ''}`}></span>
                 <div className="card__info">
                     <h3 className="card__title">{taskTitle}</h3>
                     {taskDescription && <p className="card__description">{taskDescription}</p>}

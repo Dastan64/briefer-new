@@ -29,6 +29,10 @@
         + .card__box {
           background-image: url("https://www.technodom.kz/under/briefer/checkbox-tick.svg");
           border: none;
+
+          &--disabled {
+            background-image: url("https://www.technodom.kz/under/briefer/checkbox-disabled-tick.svg");
+          }
         }
       }
     }
@@ -42,6 +46,10 @@
         + .card__box {
           background-image: url("https://www.technodom.kz/under/briefer/tick.svg");
           border: none;
+
+          &--disabled {
+            background-image: url("https://www.technodom.kz/under/briefer/checkbox-disabled-tick.svg");
+          }
         }
       }
     }

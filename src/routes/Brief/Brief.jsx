@@ -11,6 +11,7 @@ import { declinate } from '../../utils/declinate';
 import Input from '../../components/UI/Input/Input';
 import TaskSection from '../../components/TaskSection/TaskSection';
 import FileInfoInput from '../../components/FileInfoInput/FileInfoInput';
+import { convertHoursToDays } from '../../utils/convertHoursToDays';
 
 const Brief = () => {
         const { id } = useParams();
@@ -22,12 +23,13 @@ const Brief = () => {
             dispatch(fetchBriefTasks(id))
         }, [id, dispatch])
 
-        const totalTime = useMemo(() => tasks.reduce((acc, current) => acc + Number(current.taskTimeToCreate.toString().replace(/,/g, '.')) || 0, 0), [tasks]);
+        const totalHours = useMemo(() => tasks.reduce((acc, current) => acc + Number(current.taskTimeToCreate.toString().replace(/,/g, '.')) || 0, 0), [tasks]);
 
         return (
             <main className="result">
                 <p className="result__time">Общее время разработки:
-                    <span className="result__time--bolder"> {totalTime} {declinate(totalTime, 'hours')}</span>
+                    <span
+                        className="result__time--bolder"> {totalHours > 24 ? convertHoursToDays(totalHours) : `${totalHours} ${declinate(totalHours, 'hours')}`}</span>
                 </p>
                 <div className="result__fields">
                     {tasks.filter(task => task.taskType !== 'radio' && task.taskType !== 'checkbox').map(task => {

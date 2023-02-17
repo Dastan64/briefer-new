@@ -4,6 +4,10 @@
   flex-direction: column;
   gap: 9px;
 
+  &:last-child {
+    grid-column: span 2;
+  }
+
   &--wide {
     grid-column: span 3;
   }
