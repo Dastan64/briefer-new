@@ -4,23 +4,26 @@ import { v4 as uuidv4 } from 'uuid';
 
 const FileInfoInput = ({ task }) => {
     const [links, setLinks] = useState([]);
-    const [fileIds] = useState(JSON.parse(task.value.replace(/'/g, '"')))
+    const [fileIds] = useState(JSON.parse(task.value.replace(/'/g, '"')));
+
     useEffect(() => {
+        const AUTH_HEADER = {
+            'Content-Type': 'application/json',
+            'Authorization': 'Basic Y29udGVudF9zZXJ2aWNlX2FjY291bnQ6aDRyZDJyM20zbWIzcnA0c3N3MHJk',
+        };
         const fetchData = async () => {
             return await Promise.all(
                 fileIds.map(id => {
                     return fetch(`https://marketing-stage.technodom.kz/api/v1/promo_brief_constructor/${id}`, {
                         method: 'GET',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': 'Basic Y29udGVudF9zZXJ2aWNlX2FjY291bnQ6aDRyZDJyM20zbWIzcnA0c3N3MHJk',
-                        },
+                        headers: AUTH_HEADER,
                     }).then(response => response.json())
                 })
             );
         };
         fetchData().then(data => setLinks(data));
     }, [fileIds])
+
     return (
         <div className="input-container">
             <label className="label label--file">Файлы:</label>
@@ -29,7 +32,7 @@ const FileInfoInput = ({ task }) => {
                     return /\.(pdf|jpg|jpeg|png|docx|doc)$/.test(link.original_filename) ?
                         <a className="list__link" href={link.link} target="_blank" rel="noopener noreferrer"
                            key={uuidv4()}>
-                            <div className="file file--previewable">
+                            <div className="file">
                                 <span className="file__name">{link.original_filename}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                      strokeWidth={2} stroke="#fc6b3f" width={16} height={16}>
@@ -42,14 +45,13 @@ const FileInfoInput = ({ task }) => {
                         </a> : (
                             <a className="list__link" href={link.link} download
                                key={uuidv4()}>
-                                <div className="file file--previewable">
+                                <div className="file">
                                     <span className="file__name">{link.original_filename}</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          strokeWidth={2} stroke="#fc6b3f" width={16} height={16}>
                                         <path strokeLinecap="round" strokeLinejoin="round"
                                               d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/>
                                     </svg>
-
                                 </div>
                             </a>
                         )

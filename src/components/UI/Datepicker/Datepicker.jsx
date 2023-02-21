@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import './Datepicker.scss';
 
 import 'flatpickr/dist/themes/material_green.css';
@@ -6,7 +7,6 @@ import Flatpickr from 'react-flatpickr';
 import { Russian } from 'flatpickr/dist/l10n/ru.js'
 
 import { formatDate } from '../../../utils/formatDate';
-import { useDispatch } from 'react-redux';
 import { checkTask } from '../../../features/data/dataSlice';
 
 const Datepicker = ({ label, id, subsectionId, isRequired }) => {
@@ -23,8 +23,9 @@ const Datepicker = ({ label, id, subsectionId, isRequired }) => {
 
     return (
         <div className="input-container">
-            <label className="label">{label}{isRequired &&
-                <span className="label__asterisk">*</span>}</label>
+            <label className="label">{label}
+                {isRequired && <span className="label__asterisk">*</span>}
+            </label>
             <Flatpickr
                 options={{
                     altInput: true,

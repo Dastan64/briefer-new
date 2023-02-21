@@ -17,11 +17,9 @@
   border-radius: 8px;
   color: #212427;
 
-  &--previewable {
-    &:hover {
-      svg {
-        stroke: #E55E39;
-      }
+  &:hover {
+    svg {
+      stroke: #E55E39;
     }
   }
 }

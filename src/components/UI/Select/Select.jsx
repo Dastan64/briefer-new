@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { checkTask } from '../../../features/data/dataSlice';
 
 const Select = ({ slugData, label, defaultValue, subsectionId, id, isRequired }) => {
-    const [slug] = useState(slugData.split('_').at(-1))
+    const [slug] = useState(slugData.split('_').at(-1));
     const data = useSelector(state => state.data.data[slug]);
     const dispatch = useDispatch();
     const selectRef = useRef(null);
@@ -48,9 +48,7 @@ const Select = ({ slugData, label, defaultValue, subsectionId, id, isRequired })
         return () => window.removeEventListener('click', handleClickOutside)
     }, [])
 
-    const handleChange = ({ target }) => {
-        setSearchInputValue(target.value);
-    }
+    const handleChange = ({ target }) => setSearchInputValue(target.value);
 
     return (
         <div className="input-container">

@@ -1,16 +1,18 @@
 import React, { useMemo } from 'react';
 import './Footer.scss';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {
     selectAllCheckedTasks,
     selectAllSubsections,
     selectFormMandatoryTasks,
     selectTotalTimeOfAllTasks, setBriefId
 } from '../../features/data/dataSlice';
+
+//Utils
 import { convertHoursToDays } from '../../utils/convertHoursToDays';
 import { declinate } from '../../utils/declinate';
 import { deleteKeys } from '../../utils/deleteKeys';
-import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
     const navigate = useNavigate();
@@ -55,8 +57,8 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer__info">
-                <p className="footer__info-caption">Общее время
-                    разработки: <span>{totalHours > 24 ? convertHoursToDays(totalHours) : `${totalHours} ${declinate(totalHours, 'hours')}`}</span>
+                <p className="footer__info-caption">Общее время разработки:
+                    <span>{totalHours > 24 ? convertHoursToDays(totalHours) : `${totalHours} ${declinate(totalHours, 'hours')}`}</span>
                 </p>
                 <p className="footer__warning">{!isValid && 'Не все поля заполнены'}</p>
             </div>
@@ -64,7 +66,8 @@ const Footer = () => {
                 className="footer__btn"
                 disabled={!isValid}
                 onClick={handleClick}
-                type="button">Отправить бриф
+                type="button">
+                Отправить бриф
             </button>
         </footer>
     );

@@ -10,7 +10,7 @@ export const sendFiles = async (filesCollection, callback) => {
             method: 'POST',
             headers: AUTH_HEADER,
             body: formData,
-        }).then(response => response.json())
+        }).then(response => response.json()).catch(error => console.log(error))
     })
     const data = await Promise.all(promises);
     const uuids = data.map(obj => obj.uuid);

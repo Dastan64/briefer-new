@@ -6,9 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="a1a68586-b2cf-49b9-80b9-595f3b9639a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Datepicker/Datepicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Datepicker/Datepicker.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/brief/briefSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/brief/briefSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskSubSection/TaskSubSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskSubSection/TaskSubSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Datepicker/Datepicker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Datepicker/Datepicker.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Select/Select.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Select/Select.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/sendFiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sendFiles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +76,13 @@
       <workItem from="1676547628135" duration="131000" />
       <workItem from="1676548470173" duration="13451000" />
       <workItem from="1676624920885" duration="1536000" />
-      <workItem from="1676628386491" duration="38000" />
+      <workItem from="1676628386491" duration="88000" />
+      <workItem from="1676863997400" duration="113000" />
+      <workItem from="1676864540937" duration="12000" />
+      <workItem from="1676867884602" duration="32000" />
+      <workItem from="1676869916898" duration="2380000" />
+      <workItem from="1676950402327" duration="1102000" />
+      <workItem from="1676951768658" duration="1706000" />
     </task>
     <servers />
   </component>

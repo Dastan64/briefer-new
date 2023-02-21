@@ -2,12 +2,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import './Form.scss';
 
+//UI Components
 import Input from '../UI/Input/Input';
 import Select from '../UI/Select/Select';
 import Datepicker from '../UI/Datepicker/Datepicker';
 import Textarea from '../UI/Textarea/Textarea';
-import WithBlurAndDispatch from '../../hocs/WithBlurAndDispatch';
 import FileInput from '../UI/FileInput/FileInput';
+
+import WithBlurAndDispatch from '../../hocs/WithBlurAndDispatch';
 
 const EnhancedTextarea = WithBlurAndDispatch(Textarea);
 const EnhancedInput = WithBlurAndDispatch(Input);
