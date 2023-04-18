@@ -58,7 +58,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer__info">
                 <p className="footer__info-caption">Общее время разработки:
-                    <span>{totalHours > 24 ? convertHoursToDays(totalHours) : `${totalHours} ${declinate(totalHours, 'hours')}`}</span>
+                    <span> {totalHours > 24 ? convertHoursToDays(totalHours) : `${totalHours} ${declinate(totalHours, 'hours')}`}</span>
                 </p>
                 <p className="footer__warning">{!isValid && 'Не все поля заполнены'}</p>
             </div>

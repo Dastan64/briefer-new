@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+:root {
+    --lightGray: #F8F8F8;
+    --blue: #2196F3;
+    --white: #fff;
+    --textDark: #212427;
+    --gray65: #464C53;
+    --gray55: #606971;
+}
+
 @font-face {
     font-family: "Museo";
     src: url("https://www.technodom.kz/under/tab_showcase/fonts/MuseoSansCyrl-Thin.woff2");

@@ -5,13 +5,15 @@ import { v4 as uuidv4 } from 'uuid';
 import './Brief.scss';
 
 import { fetchBriefTasks } from '../../features/brief/briefSlice';
+
+//Utils
 import { declinate } from '../../utils/declinate';
+import { convertHoursToDays } from '../../utils/convertHoursToDays';
 
 //Components
 import Input from '../../components/UI/Input/Input';
 import TaskSection from '../../components/TaskSection/TaskSection';
 import FileInfoInput from '../../components/FileInfoInput/FileInfoInput';
-import { convertHoursToDays } from '../../utils/convertHoursToDays';
 
 const Brief = () => {
         const { id } = useParams();

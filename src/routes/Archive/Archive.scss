@@ -1,0 +1,29 @@
+.archive {
+  &__title {
+    margin-bottom: 16px;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 38px;
+    text-transform: uppercase;
+    color: var(--textDark);
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--gray65);
+
+    &::after {
+      content: "";
+      display: block;
+      margin: 24px 0;
+      width: 100%;
+      height: 1px;
+      background-color: #D9DCDE;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+}

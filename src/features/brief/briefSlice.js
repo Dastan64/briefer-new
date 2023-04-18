@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, nanoid } from '@reduxjs/toolkit';
 
 export const fetchBriefTasks = createAsyncThunk('brief/fetchBriefTasks', async (id) => {
-    const response = await fetch(`https://marketing-stage.technodom.kz/api/v1/promo_brief_constructor/${id}/tasks`, {
+    const response = await fetch(`https://marketing.technodom.kz/api/v1/promo_brief_constructor/${id}/tasks`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

@@ -14,7 +14,7 @@ const FileInfoInput = ({ task }) => {
         const fetchData = async () => {
             return await Promise.all(
                 fileIds.map(id => {
-                    return fetch(`https://marketing-stage.technodom.kz/api/v1/promo_brief_constructor/${id}`, {
+                    return fetch(`https://marketing.technodom.kz/api/v1/promo_brief_constructor/${id}`, {
                         method: 'GET',
                         headers: AUTH_HEADER,
                     }).then(response => response.json())
