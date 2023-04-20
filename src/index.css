@@ -5,10 +5,12 @@
 }
 
 :root {
+    --primary: #fc6b3f;
     --lightGray: #F8F8F8;
     --blue: #2196F3;
     --white: #fff;
     --textDark: #212427;
+    --gray10: #D9DCDE;
     --gray65: #464C53;
     --gray55: #606971;
 }
@@ -45,14 +47,15 @@
     max-width: 1232px;
     margin: 0 auto 0;
     font-family: "Museo", "Segoe UI", sans-serif;
+    padding: 0 16px;
 }
 
 input, button {
-    font-family: "Museo", "Segoe UI", sans-serif;
+    font-family: inherit;
 }
 
 .flatpickr-current-month .flatpickr-monthDropdown-months, .flatpickr-current-month input.cur-year, .flatpickr-calendar {
-    font-family: "Museo", "Segoe UI", sans-serif !important;
+    font-family: inherit;
 }
 
 .flatpickr-months .flatpickr-month, .flatpickr-current-month .flatpickr-monthDropdown-months, .flatpickr-weekdays, span.flatpickr-weekday, .flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {

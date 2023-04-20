@@ -2,14 +2,14 @@
   &__title {
     margin-bottom: 16px;
     font-weight: 900;
-    font-size: 32px;
+    font-size: clamp(26px, 4vw, 32px);
     line-height: 38px;
     text-transform: uppercase;
     color: var(--textDark);
   }
 
   &__subtitle {
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
     line-height: 20px;
     color: var(--gray65);
 
@@ -19,11 +19,21 @@
       margin: 24px 0;
       width: 100%;
       height: 1px;
-      background-color: #D9DCDE;
+      background-color: var(--gray10);
     }
   }
 
+  &__filters-panel {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-block-end: 24px;
+  }
+
   &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     list-style: none;
   }
 }
