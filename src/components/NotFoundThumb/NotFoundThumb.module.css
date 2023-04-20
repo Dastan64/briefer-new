@@ -1,0 +1,32 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    gap: 80px;
+    align-items: center;
+    padding: 48px;
+    border-radius: 16px;
+    background-color: var(--lightGray);
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 24px;
+        gap: 24px;
+        text-align: center;
+    }
+}
+
+.title {
+    margin-bottom: 16px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
+    color: var(--textDark);
+}
+
+.subtitle {
+    font-size: 16px;
+    line-height: 20px;
+}

@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a1a68586-b2cf-49b9-80b9-595f3b9639a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ArchiveThumb/ArchiveThumb.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArchiveThumb/ArchiveThumb.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ArchiveThumb/ArchiveThumb.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArchiveThumb/ArchiveThumb.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Archive/Archive.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Archive/Archive.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Archive/Archive.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Archive/Archive.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Success/Success.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Success/Success.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +86,7 @@
       <workItem from="1681787803017" duration="1932000" />
       <workItem from="1681811400368" duration="1051000" />
       <workItem from="1681813019716" duration="2529000" />
-      <workItem from="1681959687246" duration="13718000" />
+      <workItem from="1681959687246" duration="14358000" />
     </task>
     <servers />
   </component>

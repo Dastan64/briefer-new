@@ -5,6 +5,7 @@ import './Archive.scss';
 //Components
 import ArchiveThumb from '../../components/ArchiveThumb/ArchiveThumb';
 import IconInput from '../../components/UI/IconInput/IconInput';
+import NotFoundThumb from '../../components/NotFoundThumb/NotFoundThumb';
 
 const Archive = () => {
     const briefs = useSelector(state => state.briefsList.briefs);
@@ -63,7 +64,9 @@ const Archive = () => {
                 </ul>
             )}
             {filteredBriefs.length === 0 &&
-                <h2 className="archive__warning">Похоже, брифов с такими параметрами нет</h2>}
+                <NotFoundThumb title={'Не удалось найти запрошенный бриф'}
+                               subtitle={'Попробуйте изменить настройки поиска'}
+                               icon={'https://www.technodom.kz/under/briefer/not-found.svg'}/>}
         </section>
     );
 };
