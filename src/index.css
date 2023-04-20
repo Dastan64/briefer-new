@@ -55,7 +55,7 @@ input, button {
 }
 
 .flatpickr-current-month .flatpickr-monthDropdown-months, .flatpickr-current-month input.cur-year, .flatpickr-calendar {
-    font-family: inherit;
+    font-family: "Museo", "Segoe UI", sans-serif !important;
 }
 
 .flatpickr-months .flatpickr-month, .flatpickr-current-month .flatpickr-monthDropdown-months, .flatpickr-weekdays, span.flatpickr-weekday, .flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {

@@ -21,7 +21,7 @@ const Success = () => {
             </div>
             <div className="success__nav-links">
                 <Link className="link" to={`/briefs/${id}`}>Посмотреть бриф</Link>
-                <Link className="link" to={'/briefsList'}>Перейти ко всем брифам</Link>
+                <Link className="link" to={'/briefs'}>Перейти ко всем брифам</Link>
                 <Link className="link" to={'/'}>Создать новый бриф</Link>
             </div>
         </main>
