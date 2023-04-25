@@ -1,0 +1,6 @@
+.filtersPanel {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-block-end: 24px;
+}

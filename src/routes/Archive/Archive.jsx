@@ -4,15 +4,15 @@ import './Archive.scss';
 
 //Components
 import ArchiveThumb from '../../components/ArchiveThumb/ArchiveThumb';
-import IconInput from '../../components/UI/IconInput/IconInput';
 import NotFoundThumb from '../../components/NotFoundThumb/NotFoundThumb';
+import SearchPanel from '../../components/SearchPanel/SearchPanel';
 
 const Archive = () => {
+    const categories = ['CE', 'IT', 'MDA', 'NE', 'SDA', 'TC'];
     const briefs = useSelector(state => state.briefsList.briefs);
     const [filteredBriefs, setFilteredBriefs] = useState(briefs);
     const [filters, setFilters] = useState({
-        id: '',
-        name: '',
+        value: '',
         startDate: '',
         category: '',
         sortBy: '',
@@ -21,24 +21,27 @@ const Archive = () => {
     const handleChange = ({ target }) => {
         setFilters({
             ...filters,
-            [target.name]: target.value,
+            value: target.value,
         });
+    }
+
+    const handleClick = (key, value) => {
+        setFilters({
+            ...filters,
+            [key]: value,
+        })
     }
 
     const filterBriefs = useCallback(() => {
         let filtered = briefs;
-        if (filters.name) {
-            filtered = filtered.filter(brief => brief.name.toLowerCase().includes(filters.name));
-        }
-
-        if (filters.id) {
-            filtered = filtered.filter(brief => brief.id === +filters.id);
+        if (filters.value) {
+            filtered = filtered.filter(brief => (brief.id === +filters.value) || (brief.name.toLowerCase().trim().includes(filters.value.toLowerCase())));
         }
         setFilteredBriefs(filtered);
     }, [briefs, filters])
 
     useEffect(() => {
-        if (!filters.name && !filters.id) {
+        if (!filters.value) {
             setFilteredBriefs(briefs);
         } else {
             filterBriefs();
@@ -49,13 +52,7 @@ const Archive = () => {
         <section className="archive">
             <h2 className="archive__title">Архив</h2>
             <p className="archive__subtitle">Здесь собраны все созданные брифы.</p>
-            <div className="archive__filters-panel">
-                <IconInput value={filters.id} name={'id'} icon={'https://www.technodom.kz/under/briefer/loupe.svg'}
-                           placeholder={'Найти по ID...'}
-                           onChange={handleChange}/>
-                <IconInput value={filters.name} name={'name'} icon={'https://www.technodom.kz/under/briefer/loupe.svg'}
-                           placeholder={'Найти по названию...'} onChange={handleChange}/>
-            </div>
+            <SearchPanel filters={filters} categories={categories} onChange={handleChange} onClick={handleClick}/>
             {filteredBriefs.length > 0 && (
                 <ul className="archive__list">
                     {filteredBriefs.map(brief => {

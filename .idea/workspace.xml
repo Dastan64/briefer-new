@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a1a68586-b2cf-49b9-80b9-595f3b9639a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Success/Success.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Success/Success.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/IconInput/IconInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/IconInput/IconInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/IconInput/IconInput.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/IconInput/IconInput.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Archive/Archive.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Archive/Archive.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Archive/Archive.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Archive/Archive.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -43,6 +46,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -87,7 +91,9 @@
       <workItem from="1681787803017" duration="1932000" />
       <workItem from="1681811400368" duration="1051000" />
       <workItem from="1681813019716" duration="2529000" />
-      <workItem from="1681959687246" duration="14735000" />
+      <workItem from="1681959687246" duration="16076000" />
+      <workItem from="1682063480052" duration="9796000" />
+      <workItem from="1682397879627" duration="6418000" />
     </task>
     <servers />
   </component>
