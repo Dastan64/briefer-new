@@ -2,6 +2,7 @@ export const formatDate = (date) => {
     const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
     if (Array.isArray(date)) {
         const [startDate, endDate] = date;
+        console.log(new Date(startDate).getTime())
         const start = new Date(startDate);
         const end = new Date(endDate);
 

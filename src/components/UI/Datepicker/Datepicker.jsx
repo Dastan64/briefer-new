@@ -13,10 +13,11 @@ const Datepicker = ({ label, id, subsectionId, isRequired }) => {
     const dispatch = useDispatch();
 
     const handleClose = (dates) => {
+        console.log(dates);
         dispatch(checkTask({
             id,
             subsectionId,
-            value: formatDate(dates),
+            value: [new Date(dates[0]).getTime(), new Date(dates[1]).getTime()],
             type: 'date',
         }))
     }
@@ -28,7 +29,6 @@ const Datepicker = ({ label, id, subsectionId, isRequired }) => {
             </label>
             <Flatpickr
                 options={{
-                    altInput: true,
                     locale: Russian,
                     mode: 'range',
                     formatDate: formatDate,

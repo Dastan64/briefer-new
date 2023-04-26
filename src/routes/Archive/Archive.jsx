@@ -13,9 +13,8 @@ const Archive = () => {
     const [filteredBriefs, setFilteredBriefs] = useState(briefs);
     const [filters, setFilters] = useState({
         value: '',
-        startDate: '',
+        dates: [],
         category: '',
-        sortBy: '',
     })
 
     const handleChange = ({ target }) => {
@@ -29,6 +28,13 @@ const Archive = () => {
         setFilters({
             ...filters,
             [key]: value,
+        })
+    }
+
+    const handleClose = (dates) => {
+        setFilters({
+            ...filters,
+            dates,
         })
     }
 
@@ -52,7 +58,8 @@ const Archive = () => {
         <section className="archive">
             <h2 className="archive__title">Архив</h2>
             <p className="archive__subtitle">Здесь собраны все созданные брифы.</p>
-            <SearchPanel filters={filters} categories={categories} onChange={handleChange} onClick={handleClick}/>
+            <SearchPanel filters={filters} categories={categories} onChange={handleChange} onClick={handleClick}
+                         onClose={handleClose}/>
             {filteredBriefs.length > 0 && (
                 <ul className="archive__list">
                     {filteredBriefs.map(brief => {

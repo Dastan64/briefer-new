@@ -2,7 +2,7 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    gap: 9px;
+    gap: 8px;
 }
 
 .inputContainer:last-child {

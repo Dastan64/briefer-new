@@ -1,18 +1,17 @@
 import React from 'react';
-import './Input.scss';
+import styles from './Input.module.css';
 
 const Input = ({ label, name, placeholder, id, value, onChange, onBlur, onFocus, isRequired, isDisabled }) => {
-
     return (
-        <div className="input-container">
-            <label htmlFor={id} className="label">{label}
-                {isRequired && <span className="label__asterisk">*</span>}
+        <div className={styles.inputContainer}>
+            <label htmlFor={id} className={styles.label}>{label}
+                {isRequired && <span className={styles.labelAsterisk}>*</span>}
             </label>
             <input
                 value={value}
                 name={name}
                 id={id}
-                className={`input ${label.toLowerCase().includes('бюджет') ? 'input_type_budget' : ''}`}
+                className={`${styles.input} ${label.toLowerCase().includes('бюджет') ? styles.inputTypeBudget : ''}`}
                 placeholder={placeholder}
                 onChange={onChange}
                 onFocus={onFocus}

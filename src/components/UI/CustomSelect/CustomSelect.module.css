@@ -53,11 +53,12 @@
 
 .customSelectChevron {
     transition: transform 0.2s ease;
+    margin-inline-start: auto;
 }
 
 .customSelectContent {
     position: absolute;
-    top: 100%;
+    top: 94%;
     left: 0;
     right: 0;
     border: 1px solid var(--primary);

@@ -1,5 +1,5 @@
 import React from 'react';
-import './CustomDatepicker.module.css';
+import styles from './CustomDatepicker.module.css';
 
 import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/themes/material_green.css';
@@ -7,15 +7,17 @@ import { Russian } from 'flatpickr/dist/l10n/ru.js'
 
 import { formatDate } from '../../../utils/formatDate';
 
-const CustomDatepicker = () => {
-    const handleClose = (dates) => {
-        console.log(dates);
-    }
+const CustomDatepicker = ({ label, isRequired, iconDirection, variant, onClose, ...props }) => {
+    const { id, subsectionId } = props;
+
+    const handleClose = (dates) => onClose(dates, id, subsectionId);
+
     return (
-        <div>
+        <div className={styles.datepickerContainer}>
+            {label && <label className={styles.label}>{label} {isRequired && <span>*</span>}</label>}
             <Flatpickr
+                className={`flatpickr-input ${iconDirection ? `flatpickr-input_icon_${iconDirection}` : ''} ${variant ? `flatpickr-input_${variant}` : ''}`}
                 options={{
-                    altInput: true,
                     locale: Russian,
                     mode: 'range',
                     formatDate: formatDate,
