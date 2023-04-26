@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import './Archive.scss';
+import styles from './Archive.module.css';
 
 //Components
 import ArchiveThumb from '../../components/ArchiveThumb/ArchiveThumb';
@@ -55,13 +55,13 @@ const Archive = () => {
     }, [filters, briefs]);
 
     return (
-        <section className="archive">
-            <h2 className="archive__title">Архив</h2>
-            <p className="archive__subtitle">Здесь собраны все созданные брифы.</p>
+        <section>
+            <h2 className={styles.title}>Архив</h2>
+            <p className={styles.subtitle}>Здесь собраны все созданные брифы.</p>
             <SearchPanel filters={filters} categories={categories} onChange={handleChange} onClick={handleClick}
                          onClose={handleClose}/>
             {filteredBriefs.length > 0 && (
-                <ul className="archive__list">
+                <ul className={styles.list}>
                     {filteredBriefs.map(brief => {
                         return <ArchiveThumb data={brief} key={brief.id}/>
                     })}

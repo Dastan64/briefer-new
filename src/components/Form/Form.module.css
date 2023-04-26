@@ -1,35 +1,35 @@
 .brief {
-  margin-bottom: 56px;
+    margin-bottom: 56px;
+}
 
-  &__text-container {
+.textContainer {
     margin-bottom: 32px;
-  }
+}
 
-  &__title {
+.title {
     margin-bottom: 16px;
     font-weight: 900;
     font-size: 32px;
     line-height: 38px;
     text-transform: uppercase;
     color: var(--textDark);
-  }
+}
 
-  &__subtitle {
+.subtitle {
     margin-bottom: 4px;
     font-size: 16px;
     line-height: 20px;
     color: #464C53;
-  }
+}
 
-  &__warning {
+.warning {
     font-size: 14px;
     line-height: 16px;
     color: #DF0613;
-  }
+}
 
-  .form {
+.form {
     display: grid;
     gap: 24px;
     grid-template-columns: repeat(3, 1fr);
-  }
 }

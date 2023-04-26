@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './App.scss';
+import styles from './App.module.css';
 
 import Form from '../Form/Form';
 import TaskSection from '../TaskSection/TaskSection';
@@ -17,8 +17,8 @@ const App = () => {
     }, [dispatch])
 
     return (
-        <div className="app">
-            <main className="app__main">
+        <div>
+            <main className={styles.main}>
                 <Form/>
                 {data.sections?.length > 0 && data.sections.slice(1).map((section, index) =>
                     <TaskSection

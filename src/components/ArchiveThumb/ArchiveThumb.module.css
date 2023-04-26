@@ -1,35 +1,36 @@
 .archbrief {
-  padding: 24px 32px;
-  border-radius: 16px;
-  background-color: var(--lightGray);
+    padding: 24px 32px;
+    border-radius: 16px;
+    background-color: var(--lightGray);
+}
 
-  &__container {
+.container {
     display: flex;
     align-items: center;
     gap: 16px;
     justify-content: space-between;
     flex-wrap: wrap;
-  }
+}
 
-  &__title {
+.title {
     margin-bottom: 16px;
     font-size: 24px;
     font-weight: 700;
     line-height: 29px;
-  }
+}
 
-  &__info {
+.info {
     display: flex;
     gap: 24px;
     flex-wrap: wrap;
     color: var(--gray55);
+}
 
-    strong {
-      color: var(--gray65);
-    }
-  }
+.info strong {
+    color: var(--gray65);
+}
 
-  &__link {
+.link {
     flex-shrink: 0;
     padding: 16px 32px;
     border: 1px solid var(--blue);
@@ -41,16 +42,17 @@
     text-decoration: none;
     color: var(--blue);
     transition: background-color 0.2s ease, color 0.2s ease;
+}
 
-    &:hover, &:focus-visible {
-      background-color: var(--blue);
-      color: var(--white);
-      outline: none;
-    }
+.link:hover, .link:focus-visible {
+    background-color: var(--blue);
+    color: var(--white);
+    outline: none;
+}
 
-    @media screen and (max-width: 767px) {
-      flex-grow: 1;
-      padding: 8px 16px;
+@media screen and (max-width: 767px) {
+    .link {
+        flex-grow: 1;
+        padding: 8px 16px;
     }
-  }
 }

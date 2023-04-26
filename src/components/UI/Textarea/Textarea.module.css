@@ -10,8 +10,9 @@
   color: var(--textDark);
   resize: vertical;
 
-  &:focus {
-    border: 1px solid transparent;
-    outline: 2px solid var(--blue);
-  }
+}
+
+.textarea:focus {
+  border: 1px solid transparent;
+  outline: 2px solid var(--blue);
 }

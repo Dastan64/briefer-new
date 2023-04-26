@@ -1,0 +1,67 @@
+.section:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+}
+
+.title::before {
+    min-width: 24px;
+    height: 100%;
+    content: attr(data-number);
+    font-size: 24px;
+    line-height: 29px;
+    color: #FC6B3F;
+}
+
+.titleError {
+    color: #DF0613;
+}
+
+.subtitle {
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #464C53;
+}
+
+.hidden {
+    max-height: 100px;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.cContainerBeside {
+    justify-content: flex-start;
+    gap: 40px;
+}
+
+.toggleBtn {
+    cursor: pointer;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 16px;
+    font-family: "Museo", "Segoe UI", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #fff;
+    background-color: #F7666F;
+}
+
+.toggleBtnToggled {
+    background-color: #4CAF50;
+}

@@ -180,5 +180,5 @@ export const selectTotalTimeOfAllTasks = (state) => {
     }).reduce((acc, current) => acc + current, 0)
 }
 
-export const { checkTask, checkNegativeTasksOnToggle, clearAllTasks, setBriefId } = dataSlice.actions;
+export const { checkTask, checkNegativeTasksOnToggle, setBriefId } = dataSlice.actions;
 export default dataSlice.reducer;

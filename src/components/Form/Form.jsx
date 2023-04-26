@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './Form.scss';
+import styles from './Form.module.css';
 
 //UI Components
 import Input from '../UI/Input/Input';
@@ -8,6 +8,7 @@ import Select from '../UI/Select/Select';
 import Textarea from '../UI/Textarea/Textarea';
 import FileInput from '../UI/FileInput/FileInput';
 import CustomDatepicker from '../UI/CustomDatepicker/CustomDatepicker';
+import CustomSelect from '../UI/CustomSelect/CustomSelect';
 
 import WithBlurAndDispatch from '../../hocs/WithBlurAndDispatch';
 import { checkTask } from '../../features/data/dataSlice';
@@ -33,14 +34,14 @@ const Form = () => {
     }
 
     return (
-        <section className="brief">
-            <div className="brief__text-container">
-                <h2 className="brief__title">Собираем бриф</h2>
-                <p className="brief__subtitle">Будьте внимательны, ведь каждая деталь очень важна для нас.</p>
-                <p className="brief__warning">Обязательные поля помечены звёздочкой!</p>
+        <section className={styles.brief}>
+            <div className={styles.textContainer}>
+                <h2 className={styles.title}>Собираем бриф</h2>
+                <p className={styles.subtitle}>Будьте внимательны, ведь каждая деталь очень важна для нас.</p>
+                <p className={styles.warning}>Обязательные поля помечены звёздочкой!</p>
             </div>
 
-            <form className="brief__form form">
+            <form className={styles.form}>
                 {info?.tasks?.length > 0 && info?.tasks.map(input => {
                     if (input.taskType === 'input') {
                         return <EnhancedInput name={input.taskTitle} label={input.taskTitle}
@@ -50,7 +51,9 @@ const Form = () => {
                     } else if (input.taskType === 'date') {
                         return <CustomDatepicker label={input.taskTitle} key={input.id} id={input.id}
                                                  isRequired={input.taskMandatory}
-                                                 subsectionId={info.id} onClose={handleClose} variant={'outlined'}/>
+                                                 icon={'https://www.technodom.kz/under/briefer/calendar-black.svg'}
+                                                 variant={'outlined'}
+                                                 subsectionId={info.id} onClose={handleClose}/>
                     } else if (input.taskType.includes('select')) {
                         return <Select slugData={input.taskType} label={input.taskTitle}
                                        defaultValue={'Выберите из списка'}

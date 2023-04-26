@@ -1,10 +1,10 @@
 import React from 'react';
-import './TaskCardsList.scss';
+import styles from './TaskCardsList.module.css';
 import TaskCard from '../TaskCard/TaskCard';
 
 const TaskCardsList = ({ tasks, subsectionId }) => {
     return (
-        <div className="subsection__cards-list cards-list">
+        <div className={styles.list}>
             {tasks.map(task => <TaskCard variant={task.taskVariant} task={task} key={task.id}
                                          subsectionId={subsectionId}/>)}
         </div>

@@ -5,20 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1a68586-b2cf-49b9-80b9-595f3b9639a2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArchiveThumb/ArchiveThumb.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArchiveThumb/ArchiveThumb.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ArchiveThumb/ArchiveThumb.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArchiveThumb/ArchiveThumb.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Form/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/Form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SearchPanel/SearchPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchPanel/SearchPanel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskCard/TaskCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskCard/TaskCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskCard/TaskCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskCard/TaskCard.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskCardsList/TaskCardsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskCardsList/TaskCardsList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskCardsList/TaskCardsList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskCardsList/TaskCardsList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskSection/TaskSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskSection/TaskSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskSection/TaskSection.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskSubSection/TaskSubSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskSubSection/TaskSubSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskSubSection/TaskSubSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskSubSection/TaskSubSection.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/CustomDatepicker/CustomDatepicker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomDatepicker/CustomDatepicker.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/CustomDatepicker/CustomDatepicker.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomDatepicker/CustomDatepicker.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Datepicker/Datepicker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Datepicker/Datepicker.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Datepicker/Datepicker.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Datepicker/Datepicker.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Input/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Input/Input.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/FileInput/FileInput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/FileInput/FileInput.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/Input/Input.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Input/Input.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Select/Select.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Select/Select.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Select/Select.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Select/Select.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/data/dataSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/data/dataSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Archive/Archive.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Archive/Archive.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/formatDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/formatDate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Archive/Archive.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Archive/Archive.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Brief/Brief.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Brief/Brief.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Brief/Brief.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Brief/Brief.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Success/Success.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Success/Success.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Success/Success.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Success/Success.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +127,7 @@
       <workItem from="1681959687246" duration="16076000" />
       <workItem from="1682063480052" duration="9796000" />
       <workItem from="1682397879627" duration="15949000" />
-      <workItem from="1682478538749" duration="930000" />
+      <workItem from="1682478538749" duration="12301000" />
     </task>
     <servers />
   </component>

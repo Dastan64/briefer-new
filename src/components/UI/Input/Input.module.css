@@ -3,6 +3,7 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 8px;
+    max-width: 386px;
 }
 
 .inputContainer:last-child {
@@ -38,7 +39,7 @@
 }
 
 .input {
-    min-width: 400px;
+    width: 100%;
     padding: 16px;
     border: 1px solid #FC6B3F;
     border-radius: 8px;
@@ -58,7 +59,7 @@
 .inputTypeBudget {
     background-image: url("https://new.technodom.kz/under/briefer/tenge.svg");
     background-repeat: no-repeat;
-    background-size: 24px 24px;
+    background-size: 16px 16px;
     background-position: right 16px center;
     padding-right: 48px;
 }

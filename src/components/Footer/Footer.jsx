@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import './Footer.scss';
+import styles from './Footer.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -55,15 +55,15 @@ const Footer = () => {
     }
 
     return (
-        <footer className="footer">
-            <div className="footer__info">
-                <p className="footer__info-caption">Общее время разработки:
+        <footer className={styles.footer}>
+            <div>
+                <p className={styles.caption}>Общее время разработки:
                     <span> {totalHours > 24 ? convertHoursToDays(totalHours) : `${totalHours} ${declinate(totalHours, 'hours')}`}</span>
                 </p>
-                <p className="footer__warning">{!isValid && 'Не все поля заполнены'}</p>
+                <p className={styles.warning}>{!isValid && 'Не все поля заполнены'}</p>
             </div>
             <button
-                className="footer__btn"
+                className={styles.button}
                 disabled={!isValid}
                 onClick={handleClick}
                 type="button">

@@ -1,0 +1,139 @@
+.card {
+    cursor: pointer;
+    padding: 16px;
+    background-color: #F1FFF5;
+    border-radius: 8px;
+}
+
+.disabled {
+    cursor: auto;
+    background-color: #F4F4F4;
+}
+
+.disabled .time {
+    background-color: #fff;
+    color: #4CAF50;
+}
+
+.input {
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.input[type="checkbox"] + .box {
+    border-radius: 4px;
+}
+
+.input[type="radio"] + .box {
+    border-radius: 50%;
+}
+
+.input[type="checkbox"]:checked + .box {
+    background-image: url("https://www.technodom.kz/under/briefer/checkbox-tick.svg");
+    border: none;
+}
+
+.input[type="radio"]:checked + .box {
+    background-image: url("https://www.technodom.kz/under/briefer/tick.svg");
+    border: none;
+}
+
+.input[type="checkbox"]:checked + .boxDisabled, .input[type="radio"]:checked + .boxDisabled {
+    background-image: url("https://www.technodom.kz/under/briefer/checkbox-disabled-tick.svg");
+}
+
+.box {
+    flex-shrink: 0;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #A2DAB2;
+    background-color: transparent;
+}
+
+.card_type_negative {
+    background-color: #FFF3F3;
+}
+
+.card_type_negative .box {
+    border: 1px solid #F7666F;
+}
+
+.card_type_negative:not(.card_type_negative_checked):hover {
+    background-color: #ffe8e9;
+}
+
+.card_type_positive:not(.card_type_positive_checked):hover {
+    background-color: #e4fbea;
+}
+
+.card_type_negative_checked {
+    background: #F88C93;
+    color: #F4F4F4;
+}
+
+.card_type_negative_checked .title {
+    color: #fff;
+}
+
+.card_type_negative_checked .card__description {
+    color: #F4F4F4;
+}
+
+.card_type_negative_checked .input:checked + .box {
+    border: none;
+    background-image: url("https://www.technodom.kz/under/briefer/cross.svg");
+}
+
+.cardTypeNegativeDisabled .input:checked + .box {
+    border: none;
+    background-image: url("https://www.technodom.kz/under/briefer/cross.svg");
+}
+
+.card_type_positive_checked {
+    background: #4CAF50;
+    color: #f4f4f4;
+}
+
+.card_type_positive_checked .description {
+    color: #f4f4f4;
+}
+
+.card_type_positive_checked .time {
+    background: #FFFFFF;
+    color: #4CAF50;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.title {
+    margin-bottom: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.description {
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #464C53;
+}
+
+.time {
+    padding: 6px 8px;
+    border-radius: 8px;
+    background-color: rgba(0, 129, 36, 0.1);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--textDark);
+}

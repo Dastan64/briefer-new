@@ -1,0 +1,63 @@
+.title {
+    margin-bottom: 16px;
+    font-weight: 900;
+}
+
+.id {
+    margin-bottom: 32px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #606971;
+}
+
+.idOrangePart {
+    color: #fc6b3f;
+}
+
+.container {
+    display: inline-flex;
+    gap: 32px;
+    align-items: center;
+    padding: 32px 91px 32px 40px;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 24px;
+}
+
+.title {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 900;
+}
+
+.text {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.navLinks {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.link {
+    padding: 24px 40px;
+    border: 1px solid var(--blue);
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--blue);
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.link:hover {
+    color: #fff !important;
+    background-color: var(--blue);
+}

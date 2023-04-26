@@ -1,6 +1,6 @@
 .customSelect {
     position: relative;
-    flex-basis: 210px;
+    min-width: 210px;
 }
 
 .customSelectActive .customSelectContent {

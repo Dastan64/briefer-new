@@ -2,7 +2,7 @@ import React, { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import './Brief.scss';
+import styles from './Brief.module.css';
 
 import { fetchBriefTasks } from '../../features/brief/briefSlice';
 
@@ -28,12 +28,12 @@ const Brief = () => {
         const totalHours = useMemo(() => tasks.reduce((acc, current) => acc + Number(current.taskTimeToCreate.toString().replace(/,/g, '.')) || 0, 0), [tasks]);
 
         return (
-            <main className="result">
-                <p className="result__time">Общее время разработки:
+            <main className={styles.result}>
+                <p className={styles.time}>Общее время разработки:
                     <span
-                        className="result__time--bolder"> {totalHours > 24 ? convertHoursToDays(totalHours) : `${totalHours} ${declinate(totalHours, 'hours')}`}</span>
+                        className={styles.timeBolder}> {totalHours > 24 ? convertHoursToDays(totalHours) : `${totalHours} ${declinate(totalHours, 'hours')}`}</span>
                 </p>
-                <div className="result__fields">
+                <div className={styles.fields}>
                     {tasks.filter(task => task.taskType !== 'radio' && task.taskType !== 'checkbox').map(task => {
                         if (task.taskType === 'file') {
                             return <FileInfoInput task={task} key={uuidv4()}/>
@@ -44,7 +44,7 @@ const Brief = () => {
 
                     })}
                 </div>
-                <div className="result__options">
+                <div className={styles.options}>
                     {sections?.length > 0 && sections.map((section, index) =>
                         <TaskSection
                             section={section}

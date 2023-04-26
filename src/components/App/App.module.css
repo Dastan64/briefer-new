@@ -1,0 +1,7 @@
+.appSection:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.main {
+    margin-bottom: 180px;
+}

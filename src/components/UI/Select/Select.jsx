@@ -58,7 +58,7 @@ const Select = ({ slugData, label, defaultValue, subsectionId, id, isRequired })
             <div className={`select ${isOpen ? 'select--active' : ''}`} ref={selectRef}>
                 <button type="button" className="select__btn" onClick={handleClick}>
                     <span>{selectedOption || defaultValue}</span>
-                    <img width="16" height="16" src="https://www.technodom.kz/under/briefer/chevron.svg" alt=""/>
+                    <img width="16" height="16" src="https://www.technodom.kz/under/briefer/chevron-black.svg" alt=""/>
                 </button>
                 <div className="select__content">
                     <input value={searchInputValue} className="select__search-input" type="search"
