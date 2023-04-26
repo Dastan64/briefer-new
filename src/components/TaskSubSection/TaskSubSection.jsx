@@ -14,7 +14,7 @@ const TaskSubSection = ({ subsection, parentIndex, index }) => {
             <h3 className={styles.title}
                 data-number={`${parentIndex}.${index + 1}`}>
                 {subsectionTitle || 'Заголовок второго уровня'}
-                {hours !== 0 && <span className="time">{hours} {declinate(hours, 'hours')}</span>}
+                {hours !== 0 && <span className={styles.time}>{hours} {declinate(hours, 'hours')}</span>}
             </h3>
             <p className={styles.subtitle}>{subsectionDescription || 'Описание подраздела'}</p>
             <TaskCardsList tasks={tasks} subsectionId={id}/>
