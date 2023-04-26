@@ -1,18 +1,18 @@
 .textarea {
-  width: 100%;
-  padding: 16px;
-  min-height: 112px;
-  border: 1px solid #fc6b3f;
-  border-radius: 8px;
-  font-size: 16px;
-  line-height: 24px;
-  font-family: "Museo", "Segoe UI", sans-serif;
-  color: var(--textDark);
-  resize: vertical;
+    width: 100%;
+    padding: 16px;
+    min-height: 112px;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "Museo", "Segoe UI", sans-serif;
+    color: var(--textDark);
+    resize: vertical;
 
 }
 
 .textarea:focus {
-  border: 1px solid transparent;
-  outline: 2px solid var(--blue);
+    border: 1px solid transparent;
+    outline: 2px solid var(--blue);
 }

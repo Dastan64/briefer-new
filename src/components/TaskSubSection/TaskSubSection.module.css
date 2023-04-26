@@ -2,7 +2,7 @@
     padding-left: 24px;
     padding-top: 24px;
     padding-bottom: 32px;
-    border-bottom: 1px solid #D9DCDE;
+    border-bottom: 1px solid var(--gray10);
 }
 
 .subsection:not(:last-child) {
@@ -10,8 +10,8 @@
 }
 
 .subsection:first-of-type {
-    border-top: 1px solid #D9DCDE;
-    border-bottom: 1px solid #D9DCDE;
+    border-top: 1px solid var(--gray10);
+    border-bottom: 1px solid var(--gray10);
 }
 
 .title {
@@ -31,14 +31,14 @@
     content: attr(data-number);
     font-size: 18px;
     line-height: 26px;
-    color: #FC6B3F;
+    color: var(--primary);
 }
 
 .title .time {
     padding: 6px 8px;
     border-radius: 8px;
-    background-color: #4CAF50;
-    color: #FFF;
+    background-color: var(--green);
+    color: var(--white);
     font-weight: 700;
     font-size: 12px;
     line-height: 14px;
@@ -47,5 +47,5 @@
 .subtitle {
     font-size: 14px;
     line-height: 20px;
-    color: #464C53;
+    color: var(--gray65);
 }

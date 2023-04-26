@@ -19,18 +19,14 @@
     content: attr(data-number);
     font-size: 24px;
     line-height: 29px;
-    color: #FC6B3F;
-}
-
-.titleError {
-    color: #DF0613;
+    color: var(--primary);
 }
 
 .subtitle {
     margin-bottom: 32px;
     font-size: 16px;
     line-height: 20px;
-    color: #464C53;
+    color: var(--gray65);
 }
 
 .hidden {
@@ -58,10 +54,10 @@
     font-size: 20px;
     font-weight: 700;
     line-height: 24px;
-    color: #fff;
-    background-color: #F7666F;
+    color: var(--white);
+    background-color: var(--red90);
 }
 
 .toggleBtnToggled {
-    background-color: #4CAF50;
+    background-color: var(--green);
 }

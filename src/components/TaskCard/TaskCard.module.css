@@ -1,18 +1,18 @@
 .card {
     cursor: pointer;
     padding: 16px;
-    background-color: #F1FFF5;
+    background-color: var(--paleGreen);
     border-radius: 8px;
 }
 
 .disabled {
     cursor: auto;
-    background-color: #F4F4F4;
+    background-color: var(--gray3);
 }
 
 .disabled .time {
-    background-color: #fff;
-    color: #4CAF50;
+    background-color: var(--white);
+    color: var(--green);
 }
 
 .input {
@@ -49,37 +49,37 @@
     display: block;
     width: 24px;
     height: 24px;
-    border: 1px solid #A2DAB2;
+    border: 1px solid var(--green90);
     background-color: transparent;
 }
 
 .card_type_negative {
-    background-color: #FFF3F3;
+    background-color: var(--paleRed);
 }
 
 .card_type_negative .box {
-    border: 1px solid #F7666F;
+    border: 1px solid var(--red90);
 }
 
 .card_type_negative:not(.card_type_negative_checked):hover {
-    background-color: #ffe8e9;
+    background-color: var(--red10);
 }
 
 .card_type_positive:not(.card_type_positive_checked):hover {
-    background-color: #e4fbea;
+    background-color: var(--green10);
 }
 
 .card_type_negative_checked {
-    background: #F88C93;
-    color: #F4F4F4;
+    background-color: var(--red80);
+    color: var(--gray3);
 }
 
 .card_type_negative_checked .title {
-    color: #fff;
+    color: var(--white);
 }
 
 .card_type_negative_checked .card__description {
-    color: #F4F4F4;
+    color: var(--gray3);
 }
 
 .card_type_negative_checked .input:checked + .box {
@@ -93,17 +93,17 @@
 }
 
 .card_type_positive_checked {
-    background: #4CAF50;
-    color: #f4f4f4;
+    background-color: var(--green);
+    color: var(--gray3);
 }
 
 .card_type_positive_checked .description {
-    color: #f4f4f4;
+    color: var(--gray3);
 }
 
 .card_type_positive_checked .time {
-    background: #FFFFFF;
-    color: #4CAF50;
+    background-color: var(--white);
+    color: var(--green);
 }
 
 .container {
@@ -125,7 +125,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
-    color: #464C53;
+    color: var(--gray65);
 }
 
 .time {

@@ -8,10 +8,23 @@
 
 :root {
     --primary: #fc6b3f;
+    --darkOrange: #E55E39;
     --lightGray: #F8F8F8;
     --blue: #2196F3;
     --white: #fff;
+    --paleRed: #FFF3F3;
+    --red10: #ffe8e9;
+    --red80: #F88C93;
+    --red90: #F7666F;
+    --red: #DF0613;
     --textDark: #212427;
+    --paleGreen: #F1FFF5;
+    --green10: #e4fbea;
+    --green90: #A2DAB2;
+    --green: #4caf50;
+    --gray: #f1f1f1;
+    --gray3: #F4F4F4;
+    --darkGray: #ccc;
     --gray10: #D9DCDE;
     --gray65: #464C53;
     --gray55: #606971;

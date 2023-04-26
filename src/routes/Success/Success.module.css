@@ -8,11 +8,11 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 20px;
-    color: #606971;
+    color: var(--gray55);
 }
 
 .idOrangePart {
-    color: #fc6b3f;
+    color: var(--primary);
 }
 
 .container {
@@ -20,8 +20,8 @@
     gap: 32px;
     align-items: center;
     padding: 32px 91px 32px 40px;
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: var(--green);
+    color: var(--white);
     border-radius: 24px;
 }
 
@@ -58,6 +58,6 @@
 }
 
 .link:hover {
-    color: #fff !important;
+    color: var(--white) !important;
     background-color: var(--blue);
 }
