@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import './FileInput.scss';
+import styles from './FileInput.module.css';
 
 import { sendFiles } from '../../../utils/sendFiles';
 import { checkTask } from '../../../features/data/dataSlice';
@@ -37,8 +37,8 @@ const FileInput = ({ label, name, isRequired, id, subsectionId }) => {
 
     return (
         <div className="input-container">
-            <label htmlFor={name} className="label label--file">{label}:
-                {isRequired && <span className="label__asterisk">*</span>}
+            <label htmlFor={name} className="label">{label}:
+                {isRequired && <span>*</span>}
             </label>
             <input
                 type="file"
@@ -46,13 +46,13 @@ const FileInput = ({ label, name, isRequired, id, subsectionId }) => {
                 name={name}
                 ref={inputRef}
                 id={name}
-                className="input input--file"
+                className={styles.hidden}
                 onChange={handleChange}
                 multiple
             />
-            <button type="button" className={`file-button ${value ? 'file-button--highlighted' : ''}`}
+            <button type="button" className={`${styles.button} ${value ? styles.buttonHighlighted : ''}`}
                     onClick={handleClick}>
-                <span className="file-button__text" ref={buttonTextRef}>Выберите файл (-ы) с устройства</span>
+                <span className={styles.text} ref={buttonTextRef}>Выберите файл (-ы) с устройства</span>
             </button>
         </div>
     );

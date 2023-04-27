@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './FileInfoInput.scss';
+import styles from './FileInfoInput.module.css';
 import { v4 as uuidv4 } from 'uuid';
 
 const FileInfoInput = ({ task }) => {
@@ -27,13 +27,13 @@ const FileInfoInput = ({ task }) => {
     return (
         <div className="input-container">
             <label className="label">Файлы:</label>
-            <ul className="list">
+            <ul className={styles.list}>
                 {links.map(link => {
                     return /\.(pdf|jpg|jpeg|png|docx|doc)$/.test(link.original_filename) ?
-                        <a className="list__link" href={link.link} target="_blank" rel="noopener noreferrer"
+                        <a className={styles.link} href={link.link} target="_blank" rel="noopener noreferrer"
                            key={uuidv4()}>
-                            <div className="file">
-                                <span className="file__name">{link.original_filename}</span>
+                            <div className={styles.file}>
+                                <span>{link.original_filename}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                      strokeWidth={2} stroke="#fc6b3f" width={16} height={16}>
                                     <path strokeLinecap="round" strokeLinejoin="round"
@@ -43,10 +43,10 @@ const FileInfoInput = ({ task }) => {
                                 </svg>
                             </div>
                         </a> : (
-                            <a className="list__link" href={link.link} download
+                            <a className={styles.link} href={link.link} download
                                key={uuidv4()}>
-                                <div className="file">
-                                    <span className="file__name">{link.original_filename}</span>
+                                <div className={styles.file}>
+                                    <span>{link.original_filename}</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          strokeWidth={2} stroke="#fc6b3f" width={16} height={16}>
                                         <path strokeLinecap="round" strokeLinejoin="round"

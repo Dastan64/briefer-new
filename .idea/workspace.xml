@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a1a68586-b2cf-49b9-80b9-595f3b9639a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/FileInput/FileInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/FileInput/FileInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/FileInput/FileInput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/FileInput/FileInput.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +96,7 @@
       <workItem from="1682397879627" duration="15949000" />
       <workItem from="1682478538749" duration="19078000" />
       <workItem from="1682566046984" duration="4386000" />
-      <workItem from="1682582772701" duration="955000" />
+      <workItem from="1682582772701" duration="1263000" />
     </task>
     <servers />
   </component>
