@@ -55,6 +55,19 @@
     color: var(--gray55);
 }
 
+.searchInput {
+    width: 80%;
+    padding: 16px;
+    margin-left: 16px;
+    margin-bottom: 12px;
+    margin-right: 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    background-color: var(--gray3);
+}
+
 .customSelectValue {
     color: var(--textDark);
     font-weight: 700;

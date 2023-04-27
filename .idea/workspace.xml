@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a1a68586-b2cf-49b9-80b9-595f3b9639a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Form/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchPanel/SearchPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchPanel/SearchPanel.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.module.css" afterDir="false" />
     </list>
@@ -96,7 +93,8 @@
       <workItem from="1682063480052" duration="9796000" />
       <workItem from="1682397879627" duration="15949000" />
       <workItem from="1682478538749" duration="19078000" />
-      <workItem from="1682566046984" duration="2205000" />
+      <workItem from="1682566046984" duration="4386000" />
+      <workItem from="1682582772701" duration="955000" />
     </task>
     <servers />
   </component>
