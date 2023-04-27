@@ -2,13 +2,13 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Form.module.css';
 
+import SelectWrapper from '../SelectWrapper/SelectWrapper';
+
 //UI Components
 import Input from '../UI/Input/Input';
-import Select from '../UI/Select/Select';
 import Textarea from '../UI/Textarea/Textarea';
 import FileInput from '../UI/FileInput/FileInput';
 import CustomDatepicker from '../UI/CustomDatepicker/CustomDatepicker';
-import CustomSelect from '../UI/CustomSelect/CustomSelect';
 
 import WithBlurAndDispatch from '../../hocs/WithBlurAndDispatch';
 import { checkTask } from '../../features/data/dataSlice';
@@ -55,10 +55,14 @@ const Form = () => {
                                                  variant={'outlined'}
                                                  subsectionId={info.id} onClose={handleClose}/>
                     } else if (input.taskType.includes('select')) {
-                        return <Select slugData={input.taskType} label={input.taskTitle}
-                                       defaultValue={'Выберите из списка'}
-                                       name={input.taskType} key={input.id} id={input.id} subsectionId={info.id}
-                                       isRequired={input.taskMandatory}/>
+                        return <SelectWrapper slugData={input.taskType} caption={'Выберите из списка'}
+                                              label={input.taskTitle} id={input.id} subsectionId={info.id}
+                                              isRequired={input.taskMandatory}
+                                              key={input.id}/>
+                        // return <Select slugData={input.taskType} label={input.taskTitle}
+                        //                defaultValue={'Выберите из списка'}
+                        //                name={input.taskType} key={input.id} id={input.id} subsectionId={info.id}
+                        //                isRequired={input.taskMandatory}/>
                     } else if (input.taskType === 'textarea') {
                         return <EnhancedTextarea name={input.taskTitle} label={input.taskTitle} key={input.id}
                                                  id={input.id} subsectionId={info.id} isRequired={input.taskMandatory}/>

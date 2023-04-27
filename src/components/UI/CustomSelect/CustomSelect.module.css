@@ -1,6 +1,15 @@
 .customSelect {
     position: relative;
     min-width: 210px;
+    width: 100%;
+}
+
+.customSelect.primary .customSelectButton {
+    border-color: var(--primary);
+}
+
+.customSelect.primary .customSelectValue {
+    font-weight: 400;
 }
 
 .customSelectActive .customSelectContent {
@@ -39,7 +48,7 @@
     outline: 1px solid var(--primary);
 }
 
-.customSelectCaption {
+.customSelectPlaceholder {
     display: flex;
     align-items: baseline;
     gap: 6px;
@@ -86,7 +95,7 @@
 
 .customSelectOptionsList li {
     width: 100%;
-    color: var(--gray55);
+    color: var(--textDark);
     cursor: pointer;
 }
 

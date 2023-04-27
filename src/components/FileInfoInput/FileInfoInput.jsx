@@ -26,7 +26,7 @@ const FileInfoInput = ({ task }) => {
 
     return (
         <div className="input-container">
-            <label className="label label--file">Файлы:</label>
+            <label className="label">Файлы:</label>
             <ul className="list">
                 {links.map(link => {
                     return /\.(pdf|jpg|jpeg|png|docx|doc)$/.test(link.original_filename) ?
