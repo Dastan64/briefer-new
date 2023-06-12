@@ -2,7 +2,7 @@
     margin-bottom: 56px;
 }
 
-.textContainer {
+.container {
     margin-bottom: 32px;
 }
 
@@ -31,5 +31,12 @@
 .form {
     display: grid;
     gap: 24px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(min(384px, 100%), 1fr));
 }
+
+@media screen and (max-width: 400px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+}
+

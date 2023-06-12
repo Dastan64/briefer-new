@@ -5,7 +5,7 @@ const Textarea = ({ name, label, id, value, onBlur, onChange, isRequired }) => {
 
     return (
         <div className="input-container input-container--wide">
-            <label htmlFor={id} className="label">{label}
+            <label htmlFor={id} className="label">{label}:
                 {isRequired && <span>*</span>}
             </label>
             <textarea value={value} id={id} className={styles.textarea} name={name} placeholder="Что нужно сделать?"

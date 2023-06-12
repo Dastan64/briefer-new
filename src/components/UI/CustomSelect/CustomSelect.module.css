@@ -4,33 +4,33 @@
     width: 100%;
 }
 
-.customSelect.primary .customSelectButton {
+.customSelect.primary .button {
     border-color: var(--primary);
 }
 
-.customSelect.primary .customSelectValue {
+.customSelect.primary .value {
     font-weight: 400;
 }
 
-.customSelectActive .customSelectContent {
+.customSelectActive .content {
     opacity: 1;
     visibility: visible;
     border: 1px solid var(--primary);
     border-top: none;
 }
 
-.customSelectActive .customSelectButton {
+.customSelectActive .button {
     border: 1px solid var(--primary);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-color: transparent;
 }
 
-.customSelectActive .customSelectChevron {
+.customSelectActive .chevron {
     transform: rotate(180deg);
 }
 
-.customSelectButton {
+.button {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -44,11 +44,12 @@
     cursor: pointer;
 }
 
-.customSelectButton:focus-visible {
-    outline: 1px solid var(--primary);
+.button:focus-visible, .customSelect.primary .button:focus-visible {
+    outline: none;
+    border: 1px solid var(--blue);
 }
 
-.customSelectPlaceholder {
+.placeholder {
     display: flex;
     align-items: baseline;
     gap: 6px;
@@ -68,17 +69,17 @@
     background-color: var(--gray3);
 }
 
-.customSelectValue {
+.value {
     color: var(--textDark);
     font-weight: 700;
 }
 
-.customSelectChevron {
+.chevron {
     transition: transform 0.2s ease;
     margin-inline-start: auto;
 }
 
-.customSelectContent {
+.content {
     position: absolute;
     top: 94%;
     left: 0;
@@ -93,7 +94,7 @@
     background-color: var(--white);
 }
 
-.customSelectOptionsList {
+.optionsList {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -106,12 +107,12 @@
     transition: max-height 0.2s ease;
 }
 
-.customSelectOptionsList li {
+.optionsList li {
     width: 100%;
     color: var(--textDark);
     cursor: pointer;
 }
 
-.customSelectOptionsList li:hover {
+.optionsList li:hover {
     color: var(--primary);
 }

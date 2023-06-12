@@ -5,3 +5,14 @@
 .logoContainer {
     margin-bottom: 40px;
 }
+
+@media screen and (max-width: 576px) {
+    .header {
+        padding-top: 32px;
+    }
+
+    .logoContainer {
+        margin-bottom: 24px;
+        text-align: center;
+    }
+}

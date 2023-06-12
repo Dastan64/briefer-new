@@ -9,10 +9,9 @@
     font-family: "Museo", "Segoe UI", sans-serif;
     color: var(--textDark);
     resize: vertical;
-
 }
 
 .textarea:focus {
     border: 1px solid transparent;
-    outline: 2px solid var(--blue);
+    outline: 1px solid var(--blue);
 }

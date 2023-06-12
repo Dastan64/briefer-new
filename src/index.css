@@ -83,7 +83,8 @@ input, button {
 }
 
 .flatpickr-input:focus-visible {
-    outline: 1px solid var(--primary);
+    outline: none;
+    border-color: var(--blue);
 }
 
 .flatpickr-input_icon_left {
@@ -92,7 +93,7 @@ input, button {
 }
 
 .flatpickr-input_outlined {
-    border: 1px solid #FC6B3F;
+    border: 1px solid var(--primary);
 }
 
 .flatpickr-current-month .flatpickr-monthDropdown-months, .flatpickr-current-month input.cur-year, .flatpickr-calendar {
@@ -100,24 +101,24 @@ input, button {
 }
 
 .flatpickr-months .flatpickr-month, .flatpickr-current-month .flatpickr-monthDropdown-months, .flatpickr-weekdays, span.flatpickr-weekday, .flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {
-    background: #fc6b3f !important;
+    background: var(--primary) !important;
     color: #fff;
 }
 
 .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
-    background: #fc6b3f !important;
-    border-color: #fc6b3f !important;
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
 }
 
 .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)), .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)), .flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {
-    box-shadow: -10px 0 0 #fc6b3f !important;
-    -webkit-box-shadow: -10px 0 0 #fc6b3f !important;
+    box-shadow: -10px 0 0 var(--primary) !important;
+    -webkit-box-shadow: -10px 0 0 var(--primary) !important;
 }
 
 .flatpickr-calendar.arrowTop:before, .flatpickr-calendar.arrowTop:after {
-    border-bottom-color: #fc6b3f !important;
+    border-bottom-color: var(--primary) !important;
 }
 
 .flatpickr-calendar:before, .flatpickr-calendar:after {
-    color: #fc6b3f !important;
+    color: var(--primary) !important;
 }

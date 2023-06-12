@@ -10,8 +10,8 @@ const SearchPanel = ({ filters, categories, onChange, onClick, onClose }) => {
         <div className={styles.filtersPanel}>
             <IconInput value={filters.value} name={'name'} icon={'https://www.technodom.kz/under/briefer/loupe.svg'}
                        placeholder={'Найти по названию или ID...'} onChange={onChange}/>
-            <CustomDatepicker iconDirection={'left'} onClose={onClose}
-                              icon={'https://www.technodom.kz/under/briefer/calendar.svg'}/>
+            <CustomDatepicker placeholder={'Выбери дату...'} iconDirection={'left'} onClose={onClose}
+                              icon={'https://www.technodom.kz/under/briefer/calendar.svg'} mode="single"/>
             <CustomSelect icon={'https://www.technodom.kz/under/briefer/category.svg'} placeholder={'Категория'}
                           name={'category'} data={categories} onClick={onClick} value={filters.category}/>
         </div>

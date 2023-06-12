@@ -3,11 +3,7 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 8px;
-    max-width: 386px;
-}
-
-.inputContainer:last-child {
-    grid-column: span 2;
+    /*max-width: 386px;*/
 }
 
 .inputContainerWide {
@@ -47,8 +43,12 @@
     line-height: 24px;
 }
 
+.input::placeholder {
+    opacity: 0.7;
+}
+
 .input:not(.form-control):read-only {
-    border: 1px solid #D9DCDE;
+    border: 1px solid var(--gray10);
     cursor: auto;
 }
 
@@ -66,7 +66,7 @@
 
 .input:focus {
     border: 1px solid transparent;
-    outline: 2px solid var(--blue);
+    outline: 1px solid var(--blue);
 }
 
 .inputDate {

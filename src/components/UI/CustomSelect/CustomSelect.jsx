@@ -47,28 +47,29 @@ const CustomSelect = ({ icon, placeholder, label, isRequired, name, data, value,
     return (
         <div className="input-container">
             {label && (
-                <span className="label">{label}
+                <span className="label">{label}:
                     {isRequired && <span>*</span>}
                 </span>
             )}
             <div
                 className={`${styles.customSelect} ${variant === 'primary' ? styles.primary : ''} ${isOpen ? styles.customSelectActive : ''}`}
                 ref={selectRef}>
-                <button type="button" className={styles.customSelectButton} onClick={toggleSelect}>
+                <button type="button" className={styles.button} onClick={toggleSelect}>
                     {icon && <img width={20} height={20} src={icon} alt=""/>}
-                    <span className={styles.customSelectPlaceholder}>
-                        {placeholder && !value && <span>{placeholder}:</span>}
-                        <span className={styles.customSelectValue}>{value}</span>
+                    <span className={styles.placeholder}>
+                        {placeholder && !value && <span>{placeholder}</span>}
+                        {placeholder && variant !== 'primary' && value && <span>{placeholder}</span>}
+                        <span className={styles.value}>{value}</span>
                     </span>
-                    <img className={styles.customSelectChevron}
+                    <img className={styles.chevron}
                          src="https://www.technodom.kz/under/briefer/chevron-black.svg" alt=""/>
                 </button>
-                <div className={styles.customSelectContent}>
-                    {data.length > 8 &&
+                <div className={styles.content}>
+                    {data?.length > 8 &&
                         <input value={query} className={styles.searchInput} type="search" onChange={handleSearch}
                                placeholder="Давайте поищем..."/>}
-                    <ul className={styles.customSelectOptionsList}>
-                        {filteredResults.length > 0 && filteredResults.map(item => {
+                    <ul className={styles.optionsList}>
+                        {filteredResults?.length > 0 && filteredResults.map(item => {
                             return <li tabIndex={0} key={uuidv4()} onClick={handleClick(item)}>{item}</li>
                         })}
                     </ul>

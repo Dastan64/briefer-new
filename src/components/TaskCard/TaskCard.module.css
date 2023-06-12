@@ -22,6 +22,11 @@
     appearance: none;
 }
 
+.input:focus-visible + .box {
+    outline: 1px solid var(--blue);
+    outline-offset: 4px;
+}
+
 .input[type="checkbox"] + .box {
     border-radius: 4px;
 }

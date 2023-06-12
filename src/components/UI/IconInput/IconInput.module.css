@@ -12,7 +12,7 @@
     background-position: 16px 50%;
 }
 
-.input:focus-visible, .input:hover {
-    outline: 1px solid var(--primary);
+.input:focus-visible {
+    outline: 1px solid var(--blue);
 }
 

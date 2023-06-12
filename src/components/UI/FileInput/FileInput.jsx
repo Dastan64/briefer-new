@@ -5,7 +5,7 @@ import styles from './FileInput.module.css';
 import { sendFiles } from '../../../utils/sendFiles';
 import { checkTask } from '../../../features/data/dataSlice';
 
-const FileInput = ({ label, name, isRequired, id, subsectionId }) => {
+const FileInput = ({ label, name, isRequired = false, id, subsectionId }) => {
     const [fileIds, setFileIds] = useState([]);
     const [value, setValue] = useState('');
     const buttonTextRef = useRef(null);

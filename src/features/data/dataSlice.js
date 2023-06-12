@@ -119,7 +119,7 @@ export const dataSlice = createSlice({
     },
     extraReducers(builder) {
         builder
-            .addCase(fetchData.pending, (state, action) => {
+            .addCase(fetchData.pending, (state) => {
                 state.status = 'pending';
             })
             .addCase(fetchData.fulfilled, (state, { payload }) => {
@@ -150,13 +150,9 @@ export const dataSlice = createSlice({
     }
 });
 
-export const selectFormMandatoryTasks = (state) => {
-    return state.data.modifiedData?.sections[0]?.subsections[0].tasks.filter(t => t.taskMandatory);
-}
-
 export const selectAllSubsections = (state) => {
     const res = [];
-    state.data.modifiedData.sections.slice(1).map(section => {
+    state.data.modifiedData.sections.slice(2).map(section => {
         return section.subsections.map(ss => res.push(ss))
     })
     return res;

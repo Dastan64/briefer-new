@@ -7,23 +7,35 @@ import { Russian } from 'flatpickr/dist/l10n/ru.js'
 
 import { formatDate } from '../../../utils/formatDate';
 
-const CustomDatepicker = ({ label, isRequired, icon, iconDirection, variant, onClose, ...props }) => {
-    const { id, subsectionId } = props;
+const CustomDatepicker = ({
+                              label,
+                              isRequired,
+                              icon,
+                              iconDirection,
+                              variant,
+                              onClose,
+                              placeholder,
+                              mode = 'range'
+                          }) => {
 
-    const handleClose = (dates) => onClose(dates, id, subsectionId);
+    const handleClose = (dates) => {
+        if (dates.length > 0) {
+            onClose(dates)
+        }
+    };
 
     return (
         <div className={styles.datepickerContainer}>
-            {label && <label className={styles.label}>{label} {isRequired && <span>*</span>}</label>}
+            {label && <label className={styles.label}>{label}: {isRequired && <span>*</span>}</label>}
             <Flatpickr
                 style={{ backgroundImage: `url(${icon})` }}
                 className={`flatpickr-input ${iconDirection ? `flatpickr-input_icon_${iconDirection}` : ''} ${variant ? `flatpickr-input_${variant}` : ''}`}
                 options={{
                     locale: Russian,
-                    mode: 'range',
+                    mode,
                     formatDate: formatDate,
                 }}
-                placeholder="Дата акции (начало)"
+                placeholder={placeholder}
                 onClose={handleClose}
             />
         </div>

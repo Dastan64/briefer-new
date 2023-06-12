@@ -8,6 +8,7 @@ import { checkTask } from '../../features/data/dataSlice';
 const TaskCard = ({ variant, task, subsectionId }) => {
     const dispatch = useDispatch();
     const { taskTitle, value, taskTimeToCreate, taskDescription, taskType, id, isChecked, isDisabled } = task;
+    
     const handleChange = () => {
         dispatch(checkTask({
             id,

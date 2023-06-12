@@ -6,7 +6,7 @@ export const sendFiles = async (filesCollection, callback) => {
     const promises = Array.from(filesCollection).map(file => {
         const formData = new FormData();
         formData.append('file', file);
-        return fetch(`https://marketing-stage.technodom.kz/api/v1/promo_brief_constructor/file`, {
+        return fetch(`https://marketing-stage.technodom.kz/api/v2/promo_brief_constructor/file`, {
             method: 'POST',
             headers: AUTH_HEADER,
             body: formData,

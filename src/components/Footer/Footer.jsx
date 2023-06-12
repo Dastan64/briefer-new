@@ -5,38 +5,39 @@ import { useNavigate } from 'react-router-dom';
 import {
     selectAllCheckedTasks,
     selectAllSubsections,
-    selectFormMandatoryTasks,
     selectTotalTimeOfAllTasks, setBriefId
 } from '../../features/data/dataSlice';
 
 //Utils
 import { convertHoursToDays } from '../../utils/convertHoursToDays';
 import { declinate } from '../../utils/declinate';
-import { deleteKeys } from '../../utils/deleteKeys';
+import { removeProperties } from '../../utils/removeProperties';
 
-const Footer = () => {
+const Footer = ({ formData }) => {
     const navigate = useNavigate();
-    const formTasks = useSelector(selectFormMandatoryTasks);
+    const dispatch = useDispatch();
+
     const allSubsections = useSelector(selectAllSubsections);
     const allTasks = useSelector(selectAllCheckedTasks);
     const totalHours = useSelector(selectTotalTimeOfAllTasks);
-    const dispatch = useDispatch();
 
     const isValid = useMemo(() => {
-        return formTasks?.every(task => task.isChecked) && allSubsections.every(ss => ss.tasks.some(t => t.isChecked));
-    }, [formTasks, allSubsections])
+        const requiredProperties = ['title', 'client', 'date_start', 'date_end', 'date_deadline', 'orderer', 'vendor', 'description'];
+        return requiredProperties.every(prop => formData[prop]) && allSubsections.every(ss => ss.tasks.some(t => t.isChecked));
+    }, [allSubsections, formData])
 
-    const res = allTasks.map(task => deleteKeys(task))
+    const res = allTasks.map(task => removeProperties(task, ['isChecked', 'taskVariant', 'id']));
 
     const handleClick = () => {
-        fetch('https://marketing.technodom.kz/api/v1/promo_brief_constructor/add', {
-            method: 'post',
+        fetch('https://marketing-stage.technodom.kz/api/v2/technodom/brief/add', {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Basic Y29udGVudF9zZXJ2aWNlX2FjY291bnQ6aDRyZDJyM20zbWIzcnA0c3N3MHJk',
             },
             body: JSON.stringify({
                 data: res,
+                ...formData,
             })
         }).then(response => {
             if (!response.ok) {
@@ -45,6 +46,7 @@ const Footer = () => {
                 return response.json()
             }
         }).then(data => {
+            console.log(data);
             if (data.brief_id) {
                 dispatch(setBriefId(data.brief_id));
                 navigate('/success');

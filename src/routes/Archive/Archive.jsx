@@ -8,12 +8,13 @@ import NotFoundThumb from '../../components/NotFoundThumb/NotFoundThumb';
 import SearchPanel from '../../components/SearchPanel/SearchPanel';
 
 const Archive = () => {
+    // const categories = useSelector(state => state.data.data.categories);
     const categories = ['CE', 'IT', 'MDA', 'NE', 'SDA', 'TC'];
     const briefs = useSelector(state => state.briefsList.briefs);
     const [filteredBriefs, setFilteredBriefs] = useState(briefs);
     const [filters, setFilters] = useState({
         value: '',
-        dates: [],
+        date: '',
         category: '',
     })
 
@@ -31,17 +32,17 @@ const Archive = () => {
         })
     }
 
-    const handleClose = (dates) => {
+    const handleClose = (date) => {
         setFilters({
             ...filters,
-            dates,
+            date: date[0],
         })
     }
 
     const filterBriefs = useCallback(() => {
         let filtered = briefs;
         if (filters.value) {
-            filtered = filtered.filter(brief => (brief.id === +filters.value) || (brief.name.toLowerCase().trim().includes(filters.value.toLowerCase())));
+            filtered = filtered.filter(brief => (brief.uuid === +filters.value) || (brief.title.toLowerCase().trim().includes(filters.value.toLowerCase())));
         }
         setFilteredBriefs(filtered);
     }, [briefs, filters])
@@ -62,15 +63,12 @@ const Archive = () => {
                          onClose={handleClose}/>
             {filteredBriefs.length > 0 && (
                 <ul className={styles.list}>
-                    {filteredBriefs.map(brief => {
-                        return <ArchiveThumb data={brief} key={brief.id}/>
-                    })}
+                    {filteredBriefs.map(brief => (<ArchiveThumb data={brief} key={brief.uuid}/>))}
                 </ul>
             )}
-            {filteredBriefs.length === 0 &&
-                <NotFoundThumb title={'Не удалось найти запрошенный бриф'}
-                               subtitle={'Попробуйте изменить настройки поиска'}
-                               icon={'https://www.technodom.kz/under/briefer/not-found.svg'}/>}
+            {filteredBriefs.length === 0 && <NotFoundThumb title={'Не удалось найти запрошенный бриф'}
+                                                           subtitle={'Попробуйте изменить настройки поиска'}
+                                                           icon={'https://www.technodom.kz/under/briefer/not-found.svg'}/>}
         </section>
     );
 };
