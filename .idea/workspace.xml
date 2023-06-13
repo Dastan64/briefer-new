@@ -5,41 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1a68586-b2cf-49b9-80b9-595f3b9639a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/removeProperties.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ArchiveThumb/ArchiveThumb.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ArchiveThumb/ArchiveThumb.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FileInfoInput/FileInfoInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Form/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Form/Form.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchPanel/SearchPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchPanel/SearchPanel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SelectWrapper/SelectWrapper.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SelectWrapper/SelectWrapper.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TaskCard/TaskCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskCard/TaskCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TaskCard/TaskCard.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskCard/TaskCard.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TaskCardsList/TaskCardsList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskCardsList/TaskCardsList.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TaskSection/TaskSection.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskSection/TaskSection.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TaskSubSection/TaskSubSection.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskSubSection/TaskSubSection.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/CustomDatepicker/CustomDatepicker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomDatepicker/CustomDatepicker.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/FileInput/FileInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/FileInput/FileInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/IconInput/IconInput.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/IconInput/IconInput.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Input/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Input/Input.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Input/Input.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Input/Input.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/brief/briefSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/brief/briefSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/briefsList/briefsListSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/briefsList/briefsListSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/data/dataSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/data/dataSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/global/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/global/styles/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Archive/Archive.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Archive/Archive.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/deleteKeys.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/sendFiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sendFiles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +53,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.3.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -140,6 +111,8 @@
       <workItem from="1686131515159" duration="17000" />
       <workItem from="1686131548150" duration="4000" />
       <workItem from="1686131610089" duration="10000" />
+      <workItem from="1686549060382" duration="2141000" />
+      <workItem from="1686634734134" duration="2936000" />
     </task>
     <servers />
   </component>
