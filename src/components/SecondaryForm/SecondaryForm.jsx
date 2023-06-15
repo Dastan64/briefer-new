@@ -9,12 +9,12 @@ const SecondaryForm = ({ secondaryFormDataSubsection }) => {
     const dispatch = useDispatch();
     const subsectionId = secondaryFormDataSubsection?.id;
 
-    const handleSelect = ({ option, id }) => {
-        if (option && id) {
+    const handleSelect = ({ value, id }) => {
+        if (value && id) {
             dispatch(checkTask({
                 id,
                 subsectionId,
-                value: option,
+                value,
             }))
         }
     }

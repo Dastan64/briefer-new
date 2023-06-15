@@ -137,7 +137,7 @@ export const dataSlice = createSlice({
                         tasks: ss.tasks.map(task => ({
                             ...task,
                             isChecked: false,
-                            value: task.taskTitle,
+                            value: '',
                             id: nanoid(),
                             taskVariant: task.taskTitle !== 'Не требуется' ? 'positive' : 'negative'
                         }))
@@ -150,12 +150,16 @@ export const dataSlice = createSlice({
     }
 });
 
-export const selectAllSubsections = (state) => {
+export const selectAllTaskSubsections = (state) => {
     const res = [];
     state.data.modifiedData.sections.slice(2).map(section => {
         return section.subsections.map(ss => res.push(ss))
     })
     return res;
+}
+
+export const selectSecondaryFormFields = (state) => {
+    return state.data.modifiedData.sections[1]?.subsections[0].tasks ?? [];
 }
 
 export const selectAllCheckedTasks = (state) => {
@@ -173,7 +177,7 @@ export const selectSecondaryFormDataSubsection = (state) => {
 }
 
 export const selectTotalTimeOfAllTasks = (state) => {
-    return state.data.modifiedData.sections.slice(1).map(item => {
+    return state.data.modifiedData.sections.slice(2).map(item => {
         return item.subsections.map(ss => {
             return ss.tasks.filter(task => task.isChecked).reduce((acc, current) => acc + Number(current.taskTimeToCreate.toString().replace(/,/g, '.')) || 0, 0);
         }).reduce((acc, current) => acc + current, 0);

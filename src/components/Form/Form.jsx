@@ -6,18 +6,15 @@ import SelectWrapper from '../SelectWrapper/SelectWrapper';
 //UI Components
 import Input from '../UI/Input/Input';
 import Textarea from '../UI/Textarea/Textarea';
-import FileInput from '../UI/FileInput/FileInput';
 import CustomDatepicker from '../UI/CustomDatepicker/CustomDatepicker';
 
 
 const Form = ({ requiredFormData, onChange, onClose }) => {
     const orderers = useSelector(state => state.data.data.orderers);
-    const categories = useSelector(state => state.data.data.categories);
-    const subcategories = useSelector(state => state.data.data.subcategories);
     const vendors = useSelector(state => state.data.data.vendors);
 
     const handleChange = ({ target }) => {
-        onChange(target.name, target.value);
+        onChange(target);
     }
 
     return (
@@ -45,28 +42,11 @@ const Form = ({ requiredFormData, onChange, onClose }) => {
                 <SelectWrapper name="orderer" data={orderers} label={'Заказчик промо'} placeholder={'Кто заказчик?'}
                                isRequired onSelect={onChange}/>
 
-                {/*<SelectWrapper name="category" data={categories} label={'Категория товара'}*/}
-                {/*               placeholder={'Какая категория?'} onSelect={onChange}/>*/}
-
-                {/*<SelectWrapper name="subcategory" data={subcategories} label={'Подкатегория'}*/}
-                {/*               placeholder={'Какая подкатегория'} onSelect={onChange}/>*/}
-
                 <SelectWrapper name="vendor" data={vendors} label={'Бренд'} placeholder={'Что за бренд?'} isRequired
                                onSelect={onChange}/>
 
-                {/*<Input name="budget" value={requiredFormData.budget} label={'Бюджет'} onChange={handleChange}*/}
-                {/*       placeholder={'Что по деньгам?'}/>*/}
-
                 <Textarea name="description" value={requiredFormData.description} label={'Описание задачи'}
                           onChange={handleChange} isRequired/>
-
-                {/*<Input type="url" name="link" value={requiredFormData.link} label={'Ссылка на исходники'}*/}
-                {/*       onChange={handleChange} placeholder={'Поделитесь, пожалуйста...'}/>*/}
-                
-                {/*<Input type="message" name="message" value={requiredFormData.message} label={'Ориентировочный посыл'}*/}
-                {/*       onChange={handleChange}*/}
-                {/*       placeholder={'Посыл есть? А если найду?'}/>*/}
-                {/*<FileInput name={'files'} label={'Файлы'}/>*/}
             </form>
         </section>
     );

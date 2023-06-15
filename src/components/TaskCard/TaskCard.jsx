@@ -7,23 +7,23 @@ import { checkTask } from '../../features/data/dataSlice';
 
 const TaskCard = ({ variant, task, subsectionId }) => {
     const dispatch = useDispatch();
-    const { taskTitle, value, taskTimeToCreate, taskDescription, taskType, id, isChecked, isDisabled } = task;
-    
+    const { taskTitle, taskTimeToCreate, taskDescription, taskType, id, isChecked, isDisabled } = task;
+
     const handleChange = () => {
         dispatch(checkTask({
             id,
             subsectionId,
             type: taskType,
-            value,
+            value: taskTitle,
         }));
     }
 
     return (
         <label
-            className={`${styles.card} ${variant ? styles[`card_type_${variant}`] : ''} ${isChecked ? styles[`card_type_${variant}_checked`] : ''} ${isDisabled ? styles.disabled : ''} ${value.toLowerCase() === 'не требуется' ? styles.cardTypeNegativeDisabled : ''}`}>
+            className={`${styles.card} ${variant ? styles[`card_type_${variant}`] : ''} ${isChecked ? styles[`card_type_${variant}_checked`] : ''} ${isDisabled ? styles.disabled : ''} ${taskTitle.toLowerCase() === 'не требуется' ? styles.cardTypeNegativeDisabled : ''}`}>
             <div className={styles.container}>
                 <input type={taskType} className={styles.input} checked={!isDisabled ? isChecked : true}
-                       value={value} onChange={handleChange} disabled={isDisabled}/>
+                       value={taskTitle} onChange={handleChange} disabled={isDisabled}/>
                 <span className={`${styles.box} ${isDisabled ? styles.boxDisabled : ''}`}></span>
                 <div>
                     <h3 className={styles.title}>{taskTitle}</h3>

@@ -25,7 +25,7 @@ const App = () => {
         description: '',
     })
 
-    const updateValue = (name, value) => {
+    const updateValue = ({ name, value }) => {
         setRequiredFormData({
             ...requiredFormData,
             [name]: value

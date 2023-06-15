@@ -15,7 +15,7 @@ const SelectWrapper = ({ name, data, slug, label, id, placeholder, isRequired, o
     useEffect(() => {
         const params = {
             name,
-            option: selectedOption,
+            value: selectedOption,
             id,
         }
         onSelect(params);

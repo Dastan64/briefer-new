@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
     selectAllCheckedTasks,
-    selectAllSubsections,
+    selectAllTaskSubsections, selectSecondaryFormFields,
     selectTotalTimeOfAllTasks, setBriefId
 } from '../../features/data/dataSlice';
 
@@ -17,16 +17,21 @@ const Footer = ({ requiredFormData }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const allSubsections = useSelector(selectAllSubsections);
+    const allTaskSubsections = useSelector(selectAllTaskSubsections);
+    const secondaryFormFields = useSelector(selectSecondaryFormFields);
     const allTasks = useSelector(selectAllCheckedTasks);
+
     const totalHours = useSelector(selectTotalTimeOfAllTasks);
 
     const isValid = useMemo(() => {
         const requiredProperties = ['title', 'director', 'date_start', 'date_end', 'date_deadline', 'orderer', 'vendor', 'description'];
-        return requiredProperties.every(prop => requiredFormData[prop]) && allSubsections.every(ss => ss.tasks.some(t => t.isChecked));
-    }, [allSubsections, requiredFormData])
+        return requiredProperties.every(prop => requiredFormData[prop]) && allTaskSubsections.every(ss => ss.tasks.some(t => t.isChecked));
+    }, [allTaskSubsections, requiredFormData])
 
-    const res = allTasks.map(task => removeProperties(task, ['isChecked', 'taskVariant', 'id']));
+    const allTasksMapped = allTasks.map(task => removeProperties(task, ['isChecked', 'taskVariant', 'id']));
+    const secondaryFormFieldsMapped = secondaryFormFields.map(task => removeProperties(task, ['isChecked', 'taskVariant', 'id']));
+
+    const res = [...secondaryFormFieldsMapped, ...allTasksMapped]
 
     const handleClick = () => {
         fetch('https://marketing-stage.technodom.kz/api/v2/technodom/brief/add', {
@@ -38,6 +43,7 @@ const Footer = ({ requiredFormData }) => {
             body: JSON.stringify({
                 data: res,
                 ...requiredFormData,
+                time_to_create: totalHours,
             })
         }).then(response => {
             if (!response.ok) {
