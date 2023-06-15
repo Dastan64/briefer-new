@@ -41,7 +41,7 @@ const SecondaryForm = ({ secondaryFormDataSubsection }) => {
                                           key={item.id}/>
                 } else if (item.taskType.includes('file')) {
                     return <FileInput label={item.taskTitle} id={item.id} isRequired={item.taskMandatory}
-                                      key={item.id}/>
+                                      key={item.id} subsectionId={subsectionId}/>
                 } else {
                     return <Input label={item.taskTitle} placeholder={'Введите сюда что-нибудь'} id={item.id}
                                   isRequired={item.taskMandatory} key={item.id} onBlur={handleBlur}/>
