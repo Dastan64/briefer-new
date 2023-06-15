@@ -6,31 +6,28 @@ import Form from '../Form/Form';
 import TaskSection from '../TaskSection/TaskSection';
 import Footer from '../Footer/Footer';
 
-import { fetchData } from '../../features/data/dataSlice';
+import { fetchData, selectSecondaryFormDataSubsection } from '../../features/data/dataSlice';
+import SecondaryForm from '../SecondaryForm/SecondaryForm';
 
 const App = () => {
     const data = useSelector(state => state.data.modifiedData);
+    const secondaryFormDataSubsection = useSelector(selectSecondaryFormDataSubsection);
     const dispatch = useDispatch();
 
-    const [formData, setFormData] = useState({
+    const [requiredFormData, setRequiredFormData] = useState({
         title: '',
-        client: '',
+        director: '',
         date_start: '',
         date_end: '',
         date_deadline: '',
         orderer: '',
-        category: '',
-        subcategory: '',
         vendor: '',
-        budget: '',
         description: '',
-        link: '',
-        message: '',
     })
 
     const updateValue = (name, value) => {
-        setFormData({
-            ...formData,
+        setRequiredFormData({
+            ...requiredFormData,
             [name]: value
         })
     }
@@ -39,14 +36,14 @@ const App = () => {
         if (dates.length > 1) {
             const date_start = new Date(dates[0]);
             const date_end = new Date(dates[1]);
-            setFormData({
-                ...formData,
+            setRequiredFormData({
+                ...requiredFormData,
                 date_start,
                 date_end,
             })
         } else {
-            setFormData({
-                ...formData,
+            setRequiredFormData({
+                ...requiredFormData,
                 date_deadline: new Date(dates[0]),
             })
         }
@@ -59,14 +56,15 @@ const App = () => {
     return (
         <>
             <main className={styles.main}>
-                <Form formData={formData} onChange={updateValue} onClose={setDate}/>
+                <Form requiredFormData={requiredFormData} onChange={updateValue} onClose={setDate}/>
+                <SecondaryForm secondaryFormDataSubsection={secondaryFormDataSubsection}/>
                 {data.sections?.length > 0 && data.sections.slice(2).map((section, index) =>
                     <TaskSection
                         section={section}
                         parentIndex={index}
                         key={section.id}/>)}
             </main>
-            <Footer formData={formData}/>
+            <Footer requiredFormData={requiredFormData}/>
         </>
     );
 };

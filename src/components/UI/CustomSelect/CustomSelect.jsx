@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from './CustomSelect.module.css';
 import { v4 as uuidv4 } from 'uuid';
 
-const CustomSelect = ({ icon, placeholder, label, isRequired, name, data, value, onClick, variant }) => {
+const CustomSelect = ({ icon, placeholder, label, isRequired, name, data, id, value, onClick, variant }) => {
     const [query, setQuery] = useState('');
     const [filteredResults, setFilteredResults] = useState(data);
     const [isOpen, setIsOpen] = useState(false);
@@ -11,12 +11,13 @@ const CustomSelect = ({ icon, placeholder, label, isRequired, name, data, value,
     const toggleSelect = () => setIsOpen(!isOpen);
 
     const handleClick = (item) => {
+        const params = {
+            name,
+            option: item,
+            id,
+        }
         return () => {
-            if (name) {
-                onClick(name, item);
-            } else {
-                onClick(item);
-            }
+            onClick(params);
         }
     }
 

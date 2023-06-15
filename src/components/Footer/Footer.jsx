@@ -13,7 +13,7 @@ import { convertHoursToDays } from '../../utils/convertHoursToDays';
 import { declinate } from '../../utils/declinate';
 import { removeProperties } from '../../utils/removeProperties';
 
-const Footer = ({ formData }) => {
+const Footer = ({ requiredFormData }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -22,9 +22,9 @@ const Footer = ({ formData }) => {
     const totalHours = useSelector(selectTotalTimeOfAllTasks);
 
     const isValid = useMemo(() => {
-        const requiredProperties = ['title', 'client', 'date_start', 'date_end', 'date_deadline', 'orderer', 'vendor', 'description'];
-        return requiredProperties.every(prop => formData[prop]) && allSubsections.every(ss => ss.tasks.some(t => t.isChecked));
-    }, [allSubsections, formData])
+        const requiredProperties = ['title', 'director', 'date_start', 'date_end', 'date_deadline', 'orderer', 'vendor', 'description'];
+        return requiredProperties.every(prop => requiredFormData[prop]) && allSubsections.every(ss => ss.tasks.some(t => t.isChecked));
+    }, [allSubsections, requiredFormData])
 
     const res = allTasks.map(task => removeProperties(task, ['isChecked', 'taskVariant', 'id']));
 
@@ -37,7 +37,7 @@ const Footer = ({ formData }) => {
             },
             body: JSON.stringify({
                 data: res,
-                ...formData,
+                ...requiredFormData,
             })
         }).then(response => {
             if (!response.ok) {

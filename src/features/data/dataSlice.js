@@ -168,6 +168,10 @@ export const selectAllCheckedTasks = (state) => {
     return res;
 }
 
+export const selectSecondaryFormDataSubsection = (state) => {
+    return state.data.modifiedData.sections[1]?.subsections[0];
+}
+
 export const selectTotalTimeOfAllTasks = (state) => {
     return state.data.modifiedData.sections.slice(1).map(item => {
         return item.subsections.map(ss => {

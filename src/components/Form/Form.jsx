@@ -10,7 +10,7 @@ import FileInput from '../UI/FileInput/FileInput';
 import CustomDatepicker from '../UI/CustomDatepicker/CustomDatepicker';
 
 
-const Form = ({ formData, onChange, onClose }) => {
+const Form = ({ requiredFormData, onChange, onClose }) => {
     const orderers = useSelector(state => state.data.data.orderers);
     const categories = useSelector(state => state.data.data.categories);
     const subcategories = useSelector(state => state.data.data.subcategories);
@@ -29,38 +29,11 @@ const Form = ({ formData, onChange, onClose }) => {
             </div>
 
             <form className={styles.form}>
-                {/*{info?.tasks?.length > 0 && info?.tasks.map(input => {*/}
-                {/*    if (input.taskType === 'input') {*/}
-                {/*        return <EnhancedInput name={input.taskTitle} label={input.taskTitle}*/}
-                {/*                              isRequired={input.taskMandatory}*/}
-                {/*                              placeholder="Напишите сюда что-нибудь..."*/}
-                {/*                              key={input.id} id={input.id} subsectionId={info.id}/>*/}
-                {/*    } else if (input.taskType === 'date') {*/}
-                {/*        return <CustomDatepicker label={input.taskTitle} key={input.id} id={input.id}*/}
-                {/*                                 isRequired={input.taskMandatory}*/}
-                {/*                                 icon={'https://www.technodom.kz/under/briefer/calendar-black.svg'}*/}
-                {/*                                 variant={'outlined'}*/}
-                {/*                                 subsectionId={info.id} onClose={handleClose}/>*/}
-                {/*    } else if (input.taskType.includes('select')) {*/}
-                {/*        return <SelectWrapper slugData={input.taskType} caption={'Выберите из списка'}*/}
-                {/*                              label={input.taskTitle} id={input.id} subsectionId={info.id}*/}
-                {/*                              isRequired={input.taskMandatory}*/}
-                {/*                              key={input.id}/>*/}
-                {/*        // return <Select slugData={input.taskType} label={input.taskTitle}*/}
-                {/*        //                defaultValue={'Выберите из списка'}*/}
-                {/*        //                name={input.taskType} key={input.id} id={input.id} subsectionId={info.id}*/}
-                {/*        //                isRequired={input.taskMandatory}/>*/}
-                {/*    } else if (input.taskType === 'textarea') {*/}
-                {/*        return <EnhancedTextarea name={input.taskTitle} label={input.taskTitle} key={input.id}*/}
-                {/*                                 id={input.id} subsectionId={info.id} isRequired={input.taskMandatory}/>*/}
-                {/*    }*/}
-                {/*    return <FileInput name={input.taskTitle} label={input.taskTitle} key={input.id}*/}
-                {/*                      id={input.id} subsectionId={info.id} isRequired={input.taskMandatory}/>*/}
-                {/*})}*/}
-                <Input name="title" value={formData.title} label={'Название акции'} onChange={handleChange}
+                <Input name="title" value={requiredFormData.title} label={'Название акции'} onChange={handleChange}
                        placeholder={'Напишите сюда что-нибудь'} isRequired/>
 
-                <Input name="client" value={formData.client} label={'Постановщик задачи'} onChange={handleChange}
+                <Input name="director" value={requiredFormData.director} label={'Постановщик задачи'}
+                       onChange={handleChange}
                        placeholder={'Кто задачу ставит?'} isRequired/>
 
                 <CustomDatepicker label={'Период'} icon={'https://www.technodom.kz/under/briefer/calendar-black.svg'}
@@ -72,28 +45,28 @@ const Form = ({ formData, onChange, onClose }) => {
                 <SelectWrapper name="orderer" data={orderers} label={'Заказчик промо'} placeholder={'Кто заказчик?'}
                                isRequired onSelect={onChange}/>
 
-                <SelectWrapper name="category" data={categories} label={'Категория товара'}
-                               placeholder={'Какая категория?'} onSelect={onChange}/>
+                {/*<SelectWrapper name="category" data={categories} label={'Категория товара'}*/}
+                {/*               placeholder={'Какая категория?'} onSelect={onChange}/>*/}
 
-                <SelectWrapper name="subcategory" data={subcategories} label={'Подкатегория'}
-                               placeholder={'Какая подкатегория'} onSelect={onChange}/>
+                {/*<SelectWrapper name="subcategory" data={subcategories} label={'Подкатегория'}*/}
+                {/*               placeholder={'Какая подкатегория'} onSelect={onChange}/>*/}
 
                 <SelectWrapper name="vendor" data={vendors} label={'Бренд'} placeholder={'Что за бренд?'} isRequired
                                onSelect={onChange}/>
 
-                <Input name="budget" value={formData.budget} label={'Бюджет'} onChange={handleChange}
-                       placeholder={'Что по деньгам?'}/>
+                {/*<Input name="budget" value={requiredFormData.budget} label={'Бюджет'} onChange={handleChange}*/}
+                {/*       placeholder={'Что по деньгам?'}/>*/}
 
-                <Textarea name="description" value={formData.description} label={'Описание задачи'}
+                <Textarea name="description" value={requiredFormData.description} label={'Описание задачи'}
                           onChange={handleChange} isRequired/>
 
-                <Input type="url" name="link" value={formData.link} label={'Ссылка на исходники'}
-                       onChange={handleChange} placeholder={'Поделитесь, пожалуйста...'}/>
-
-                <Input type="message" name="message" value={formData.message} label={'Ориентировочный посыл'}
-                       onChange={handleChange}
-                       placeholder={'Посыл есть? А если найду?'}/>
-                <FileInput name={'files'} label={'Файлы'}/>
+                {/*<Input type="url" name="link" value={requiredFormData.link} label={'Ссылка на исходники'}*/}
+                {/*       onChange={handleChange} placeholder={'Поделитесь, пожалуйста...'}/>*/}
+                
+                {/*<Input type="message" name="message" value={requiredFormData.message} label={'Ориентировочный посыл'}*/}
+                {/*       onChange={handleChange}*/}
+                {/*       placeholder={'Посыл есть? А если найду?'}/>*/}
+                {/*<FileInput name={'files'} label={'Файлы'}/>*/}
             </form>
         </section>
     );
