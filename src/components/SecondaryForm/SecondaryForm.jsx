@@ -7,15 +7,24 @@ import { checkTask } from '../../features/data/dataSlice';
 
 const SecondaryForm = ({ secondaryFormDataSubsection }) => {
     const dispatch = useDispatch();
+    const subsectionId = secondaryFormDataSubsection?.id;
 
     const handleSelect = ({ option, id }) => {
         if (option && id) {
             dispatch(checkTask({
                 id,
-                subsectionId: secondaryFormDataSubsection.id,
+                subsectionId,
                 value: option,
             }))
         }
+    }
+
+    const handleBlur = ({ target: { id, value } }) => {
+        dispatch(checkTask({
+            id,
+            subsectionId,
+            value,
+        }))
     }
 
     return (
@@ -35,7 +44,7 @@ const SecondaryForm = ({ secondaryFormDataSubsection }) => {
                                       key={item.id}/>
                 } else {
                     return <Input label={item.taskTitle} placeholder={'Введите сюда что-нибудь'} id={item.id}
-                                  isRequired={item.taskMandatory} key={item.id}/>
+                                  isRequired={item.taskMandatory} key={item.id} onBlur={handleBlur}/>
                 }
             })}
         </div>
