@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a1a68586-b2cf-49b9-80b9-595f3b9639a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchPanel/SearchPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchPanel/SearchPanel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SelectWrapper/SelectWrapper.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SelectWrapper/SelectWrapper.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomSelect/CustomSelect.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Archive/Archive.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Archive/Archive.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +110,7 @@
       <workItem from="1686549060382" duration="2141000" />
       <workItem from="1686634734134" duration="5625000" />
       <workItem from="1686735569018" duration="4034000" />
-      <workItem from="1686802322156" duration="13330000" />
+      <workItem from="1686802322156" duration="18150000" />
     </task>
     <servers />
   </component>

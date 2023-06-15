@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Archive.module.css';
 
@@ -14,7 +14,7 @@ const Archive = () => {
     const categories = ['CE', 'IT', 'MDA', 'NE', 'SDA', 'TC'];
     const dispatch = useDispatch();
     const briefs = useSelector(state => state.briefsList.briefs);
-    const [filteredBriefs, setFilteredBriefs] = useState(briefs);
+    const [filteredBriefs, setFilteredBriefs] = useState([]);
     const [filters, setFilters] = useState({
         value: '',
         date: '',
@@ -42,21 +42,20 @@ const Archive = () => {
         })
     }
 
-    const filterBriefs = useCallback(() => {
-        let filtered = briefs;
-        if (filters.value) {
-            filtered = filtered.filter(brief => (brief.uuid.includes(filters.value)) || (brief.title?.toLowerCase().trim().includes(filters.value.toLowerCase())));
-        }
-        setFilteredBriefs(filtered);
-    }, [briefs, filters])
+    useEffect(() => {
+        const filtered = briefs.filter(brief => {
+            const byValue = !filters.value || brief.title?.toLowerCase().includes(filters.value?.toLowerCase().trim());
+            const byDate = !filters.date || new Date(brief.date_start).getTime() === new Date(filters.date).getTime();
+            return byValue && byDate;
+        });
+        setFilteredBriefs(filtered || briefs);
+    }, [briefs, filters.value, filters.date]);
 
     useEffect(() => {
-        if (!filters.value) {
-            setFilteredBriefs(briefs);
-        } else {
-            filterBriefs();
+        if (briefs?.length > 0) {
+            setFilteredBriefs(briefs)
         }
-    }, [filters, briefs]);
+    }, [briefs])
 
     useEffect(() => {
         dispatch(fetchBriefs());
