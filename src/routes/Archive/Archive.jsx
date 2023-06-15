@@ -21,17 +21,17 @@ const Archive = () => {
         category: '',
     })
 
-    const handleChange = ({ target }) => {
+    const handleChange = ({ target: { value } }) => {
         setFilters({
             ...filters,
-            value: target.value,
+            value: value,
         });
     }
 
-    const handleClick = (key, value) => {
+    const handleSelect = ({ name, value }) => {
         setFilters({
             ...filters,
-            [key]: value,
+            [name]: value,
         })
     }
 
@@ -66,7 +66,7 @@ const Archive = () => {
         <section>
             <h2 className={styles.title}>Архив</h2>
             <p className={styles.subtitle}>Здесь собраны все созданные брифы.</p>
-            <SearchPanel filters={filters} categories={categories} onChange={handleChange} onClick={handleClick}
+            <SearchPanel filters={filters} categories={categories} onChange={handleChange} onSelect={handleSelect}
                          onClose={handleClose}/>
 
             {filteredBriefs.length > 0 && (

@@ -4,7 +4,7 @@
     width: 100%;
 }
 
-.customSelect.primary .button {
+.customSelect.primary .button, .customSelect.primary .customSelectActive .button, .customSelect.primary .content {
     border-color: var(--primary);
 }
 
@@ -15,12 +15,12 @@
 .customSelectActive .content {
     opacity: 1;
     visibility: visible;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--gray10);
     border-top: none;
 }
 
 .customSelectActive .button {
-    border: 1px solid var(--primary);
+    border: 1px solid var(--gray10);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-color: transparent;
