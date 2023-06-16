@@ -33,19 +33,19 @@ const Brief = () => {
                     <span
                         className={styles.timeBolder}> {totalHours > 24 ? convertHoursToDays(totalHours) : `${totalHours} ${declinate(totalHours, 'hours')}`}</span>
                 </p>
-                <div className={styles.fields}>
-                    {tasks.filter(task => task.taskType !== 'radio' && task.taskType !== 'checkbox').map(task => {
-                        if (task.taskType === 'file') {
-                            return <FileInfoInput task={task} key={uuidv4()}/>
-                        }
-                        return <Input name={task.taskTitle} label={task.taskTitle}
-                                      value={task.value}
-                                      key={uuidv4()} id={task.id} isDisabled={true}/>
+                {/*<div className={styles.fields}>*/}
+                {/*    {tasks.filter(task => task.taskType !== 'radio' && task.taskType !== 'checkbox').map(task => {*/}
+                {/*        if (task.taskType === 'file') {*/}
+                {/*            return <FileInfoInput task={task} key={uuidv4()}/>*/}
+                {/*        }*/}
+                {/*        return <Input name={task.taskTitle} label={task.taskTitle}*/}
+                {/*                      value={task.value}*/}
+                {/*                      key={uuidv4()} id={task.id} isDisabled={true}/>*/}
 
-                    })}
-                </div>
+                {/*    })}*/}
+                {/*</div>*/}
                 <div className={styles.options}>
-                    {sections?.length > 0 && sections.map((section, index) =>
+                    {sections?.length > 0 && sections.slice(1).map((section, index) =>
                         <TaskSection
                             section={section}
                             parentIndex={index}
