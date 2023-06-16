@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
@@ -17,15 +17,14 @@ import FileInfoInput from '../../components/FileInfoInput/FileInfoInput';
 
 const Brief = () => {
         const { id } = useParams();
-        const tasks = useSelector(state => state.brief.tasks);
         const sections = useSelector(state => state.brief.sections);
+        const totalHours = useSelector(state => state.brief.timeToCreate);
         const dispatch = useDispatch();
 
         useEffect(() => {
             dispatch(fetchBriefTasks(id))
         }, [id, dispatch])
 
-        const totalHours = useMemo(() => tasks.reduce((acc, current) => acc + Number(current.taskTimeToCreate.toString().replace(/,/g, '.')) || 0, 0), [tasks]);
 
         return (
             <main className={styles.result}>

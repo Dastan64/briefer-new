@@ -12,7 +12,7 @@ export const fetchBriefTasks = createAsyncThunk('brief/fetchBriefTasks', async (
 })
 
 const initialState = {
-    tasks: [],
+    timeToCreate: 0,
     sections: [],
     status: 'idle',
 }
@@ -26,6 +26,7 @@ export const briefSlice = createSlice({
             state.status = 'pending';
         }).addCase(fetchBriefTasks.fulfilled, (state, { payload }) => {
             console.log(payload)
+            state.timeToCreate = payload.time_to_create;
             state.tasks = payload.data;
             state.status = 'done';
             state.sections = state.tasks.reduce((acc, curr) => {
