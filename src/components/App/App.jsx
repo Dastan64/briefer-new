@@ -56,8 +56,9 @@ const App = () => {
     return (
         <>
             <main className={styles.main}>
-                <Form requiredFormData={requiredFormData} onChange={updateValue} onClose={setDate}/>
-                <SecondaryForm secondaryFormDataSubsection={secondaryFormDataSubsection}/>
+                <Form requiredFormData={requiredFormData} onChange={updateValue} onClose={setDate}>
+                    <SecondaryForm secondaryFormDataSubsection={secondaryFormDataSubsection}/>
+                </Form>
                 {data.sections?.length > 0 && data.sections.slice(2).map((section, index) =>
                     <TaskSection
                         section={section}

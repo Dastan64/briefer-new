@@ -28,11 +28,7 @@ const SecondaryForm = ({ secondaryFormDataSubsection }) => {
     }
 
     return (
-        <div style={{
-            display: 'grid',
-            gap: '24px',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(min(384px, 100%), 1fr)'
-        }}>
+        <>
             {secondaryFormDataSubsection?.tasks.length > 0 && secondaryFormDataSubsection.tasks.map(item => {
                 if (item.taskType.includes('select')) {
                     return <SelectWrapper name={item.taskType} label={item.taskTitle} slug={item.taskType}
@@ -47,7 +43,7 @@ const SecondaryForm = ({ secondaryFormDataSubsection }) => {
                                   isRequired={item.taskMandatory} key={item.id} onBlur={handleBlur}/>
                 }
             })}
-        </div>
+        </>
     );
 };
 

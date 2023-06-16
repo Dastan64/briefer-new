@@ -9,7 +9,7 @@ import Textarea from '../UI/Textarea/Textarea';
 import CustomDatepicker from '../UI/CustomDatepicker/CustomDatepicker';
 
 
-const Form = ({ requiredFormData, onChange, onClose }) => {
+const Form = ({ requiredFormData, onChange, onClose, children }) => {
     const orderers = useSelector(state => state.data.data.orderers);
     const vendors = useSelector(state => state.data.data.vendors);
 
@@ -47,6 +47,7 @@ const Form = ({ requiredFormData, onChange, onClose }) => {
 
                 <Textarea name="description" value={requiredFormData.description} label={'Описание задачи'}
                           onChange={handleChange} isRequired/>
+                {children}
             </form>
         </section>
     );
