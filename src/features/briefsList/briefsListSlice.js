@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const fetchBriefs = createAsyncThunk('brief/fetchBriefs', async () => {
-    const response = await fetch(`https://marketing-stage.technodom.kz/api/v2/technodom/brief/briefs?page=2`, {
+    const response = await fetch(`https://marketing-stage.technodom.kz/api/v2/technodom/brief/briefs?page=1`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -14,6 +14,7 @@ export const fetchBriefs = createAsyncThunk('brief/fetchBriefs', async () => {
 
 const initialState = {
     briefs: [],
+    totalCount: 0,
     status: 'idle',
 }
 
@@ -28,6 +29,7 @@ export const briefsListSlice = createSlice({
             .addCase(fetchBriefs.fulfilled, (state, { payload }) => {
                 state.status = 'done';
                 state.briefs = payload.items;
+                state.totalCount = payload.total;
             })
             .addCase(fetchBriefs.rejected, (state, { payload }) => {
                 state.status = 'failed';

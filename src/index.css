@@ -24,10 +24,11 @@
     --green: #4caf50;
     --gray: #f1f1f1;
     --gray3: #F4F4F4;
-    --darkGray: #ccc;
     --gray10: #D9DCDE;
-    --gray65: #464C53;
+    --gray30: #8E979F;
     --gray55: #606971;
+    --gray65: #464C53;
+    --darkGray: #ccc;
 }
 
 @font-face {

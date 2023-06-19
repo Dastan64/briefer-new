@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ReactPaginate from 'react-paginate';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Archive.module.css';
 
@@ -14,12 +15,20 @@ const Archive = () => {
     const categories = ['CE', 'IT', 'MDA', 'NE', 'SDA', 'TC'];
     const dispatch = useDispatch();
     const briefs = useSelector(state => state.briefsList.briefs);
+    const totalCount = useSelector(state => state.briefsList.totalCount);
     const [filteredBriefs, setFilteredBriefs] = useState([]);
     const [filters, setFilters] = useState({
         value: '',
         date: '',
         category: '',
     })
+
+    //Pagination stuff
+    const itemsPerPage = 20;
+    const [itemOffset, setItemOffset] = useState(0);
+    const endOffset = itemOffset + itemsPerPage;
+    const currentItems = filteredBriefs.slice(itemOffset, endOffset);
+    const pageCount = Math.ceil(totalCount / itemsPerPage);
 
     const handleChange = ({ target: { value } }) => {
         setFilters({
@@ -41,6 +50,12 @@ const Archive = () => {
             date: date[0],
         })
     }
+
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * itemsPerPage) % filteredBriefs.length;
+        console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
+        setItemOffset(newOffset);
+    };
 
     useEffect(() => {
         const filtered = briefs.filter(brief => {
@@ -68,15 +83,26 @@ const Archive = () => {
             <SearchPanel filters={filters} categories={categories} onChange={handleChange} onSelect={handleSelect}
                          onClose={handleClose}/>
 
-            {filteredBriefs.length > 0 && (
-                <ul className={styles.list}>
-                    {filteredBriefs.map(brief => (<ArchiveThumb data={brief} key={brief.uuid}/>))}
-                </ul>
+            {currentItems.length > 0 && (
+                <ol className={styles.list}>
+                    {currentItems.map(brief => (<ArchiveThumb data={brief} key={brief.uuid}/>))}
+                </ol>
             )}
 
             {filteredBriefs.length === 0 && <NotFoundThumb title={'Не удалось найти запрошенный бриф'}
                                                            subtitle={'Попробуйте изменить настройки поиска'}
                                                            icon={'https://www.technodom.kz/under/briefer/not-found.svg'}/>}
+            <ReactPaginate
+                activeLinkClassName={styles.active}
+                containerClassName={styles.pagination}
+                breakLabel="..."
+                nextLabel="След. стр"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={5}
+                pageCount={pageCount}
+                previousLabel="Пред. стр"
+                renderOnZeroPageCount={null}
+            />
         </section>
     );
 };
