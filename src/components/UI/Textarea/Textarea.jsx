@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Textarea.module.css';
 
-const Textarea = ({ name, label, id, value, onBlur, onChange, isRequired }) => {
+const Textarea = ({ name, label, id, value, onBlur, onChange, isRequired, isDisabled }) => {
 
     return (
         <div className="input-container input-container--wide">
@@ -10,7 +10,7 @@ const Textarea = ({ name, label, id, value, onBlur, onChange, isRequired }) => {
             </label>
             <textarea value={value} id={id} className={styles.textarea} name={name} placeholder="Что нужно сделать?"
                       onChange={onChange}
-                      onBlur={onBlur}>
+                      onBlur={onBlur} readOnly={isDisabled}>
             </textarea>
         </div>
     );

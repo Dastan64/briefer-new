@@ -13,6 +13,8 @@ export const fetchBriefTasks = createAsyncThunk('brief/fetchBriefTasks', async (
 
 const initialState = {
     timeToCreate: 0,
+    data: null,
+    requiredFormData: [],
     sections: [],
     status: 'idle',
 }
@@ -25,44 +27,18 @@ export const briefSlice = createSlice({
         builder.addCase(fetchBriefTasks.pending, (state) => {
             state.status = 'pending';
         }).addCase(fetchBriefTasks.fulfilled, (state, { payload }) => {
-            console.log(payload)
-            state.timeToCreate = payload.time_to_create;
-            state.tasks = payload.data;
             state.status = 'done';
-            state.sections = state.tasks.reduce((acc, curr) => {
-                if (curr.parentSection.toLowerCase().includes('вводная информация')) {
-                    return acc;
-                }
-                curr.isDisabled = true;
-                curr.id = nanoid();
-                const { parentSection, parentSubsection, ...rest } = curr;
-                const sectionIndex = acc.findIndex(section => section.sectionTitle === parentSection);
-                if (sectionIndex === -1) {
-                    acc.push({
-                        sectionTitle: parentSection,
-                        id: nanoid(),
-                        isDisabled: true,
-                        subsections: [{ subsectionTitle: parentSubsection, id: nanoid(), tasks: [rest] }]
-                    });
-                } else {
-                    const subsectionIndex = acc[sectionIndex].subsections.findIndex(subsection => subsection.subsectionTitle === parentSubsection);
-                    if (subsectionIndex === -1) {
-                        acc[sectionIndex].subsections.push({
-                            subsectionTitle: parentSubsection,
-                            id: nanoid(),
-                            tasks: [rest]
-                        });
-                    } else {
-                        acc[sectionIndex].subsections[subsectionIndex].tasks.push(rest);
-                    }
+            state.data = payload;
+            state.timeToCreate = payload.time_to_create;
+
+            state.requiredFormData = Object.entries(payload).reduce((acc, [key, value]) => {
+                if (key === 'date_start' || key === 'date_end') {
+                    acc.push({ period: value });
+                } else if (key !== 'uuid' && key !== 'data') {
+                    acc.push({ [key]: value });
                 }
                 return acc;
-            }, []).map(section => {
-                return {
-                    ...section,
-                    required: section.subsections.some(ss => ss.tasks.every(task => task.value.toLowerCase() !== 'не требуется'))
-                }
-            });
+            }, []);
 
         }).addCase(fetchBriefTasks.rejected, (state) => {
             state.status = 'failed';

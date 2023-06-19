@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a1a68586-b2cf-49b9-80b9-595f3b9639a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Textarea/Textarea.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/brief/briefSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/brief/briefSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Brief/Brief.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Brief/Brief.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Brief/Brief.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Brief/Brief.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +116,10 @@
       <workItem from="1686735569018" duration="4034000" />
       <workItem from="1686802322156" duration="18252000" />
       <workItem from="1686890760662" duration="2651000" />
-      <workItem from="1686905501604" duration="2160000" />
+      <workItem from="1686905501604" duration="5131000" />
+      <workItem from="1686913754403" duration="162000" />
+      <workItem from="1686915677512" duration="1212000" />
+      <workItem from="1687143978868" duration="358000" />
     </task>
     <servers />
   </component>

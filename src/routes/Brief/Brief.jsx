@@ -14,17 +14,18 @@ import { convertHoursToDays } from '../../utils/convertHoursToDays';
 import Input from '../../components/UI/Input/Input';
 import TaskSection from '../../components/TaskSection/TaskSection';
 import FileInfoInput from '../../components/FileInfoInput/FileInfoInput';
+import Textarea from '../../components/UI/Textarea/Textarea';
 
 const Brief = () => {
         const { id } = useParams();
         const sections = useSelector(state => state.brief.sections);
         const totalHours = useSelector(state => state.brief.timeToCreate);
+        const requiredFormData = useSelector(state => state.brief.data);
         const dispatch = useDispatch();
 
         useEffect(() => {
             dispatch(fetchBriefTasks(id))
         }, [id, dispatch])
-
 
         return (
             <main className={styles.result}>
@@ -40,16 +41,25 @@ const Brief = () => {
                 {/*        return <Input name={task.taskTitle} label={task.taskTitle}*/}
                 {/*                      value={task.value}*/}
                 {/*                      key={uuidv4()} id={task.id} isDisabled={true}/>*/}
+                <div className={styles.fields}>
+                    <Input label={'Название акции'} value={requiredFormData?.title || ''} isDisabled/>
+                    <Input label={'Постановщик задачи'} value={requiredFormData?.director || ''} isDisabled/>
+                    <Input label={'Заказчик'} value={requiredFormData?.orderer || ''} isDisabled/>
+                    <Input label={'Дедлайн'}
+                           value={new Date(requiredFormData?.date_deadline).toLocaleDateString() || ''} isDisabled/>
+                    <Input label={'Бренд'} value={requiredFormData?.vendor || ''} isDisabled/>
+                    <Textarea label={'Описание'} value={requiredFormData?.description || ''} isDisabled/>
+                </div>
 
                 {/*    })}*/}
                 {/*</div>*/}
-                <div className={styles.options}>
-                    {sections?.length > 0 && sections.slice(1).map((section, index) =>
-                        <TaskSection
-                            section={section}
-                            parentIndex={index}
-                            key={section.id}/>)}
-                </div>
+                {/*<div className={styles.options}>*/}
+                {/*    {sections?.length > 0 && sections.slice(1).map((section, index) =>*/}
+                {/*        <TaskSection*/}
+                {/*            section={section}*/}
+                {/*            parentIndex={index}*/}
+                {/*            key={section.id}/>)}*/}
+                {/*</div>*/}
             </main>
         );
     }

@@ -11,6 +11,11 @@
     resize: vertical;
 }
 
+.textarea:read-only {
+    border: 1px solid var(--gray10);
+    resize: none;
+}
+
 .textarea:focus {
     border: 1px solid transparent;
     outline: 1px solid var(--blue);
