@@ -27,6 +27,12 @@ const SecondaryForm = ({ secondaryFormDataSubsection }) => {
         }))
     }
 
+    const handleChange = ({ target }) => {
+        if (target.name.toLowerCase().includes('бюджет')) {
+            target.value = Number(target.value.replace(/\D/g, '')).toLocaleString()
+        }
+    }
+
     return (
         <>
             {secondaryFormDataSubsection?.tasks.length > 0 && secondaryFormDataSubsection.tasks.map(item => {
@@ -39,8 +45,10 @@ const SecondaryForm = ({ secondaryFormDataSubsection }) => {
                     return <FileInput label={item.taskTitle} id={item.id} isRequired={item.taskMandatory}
                                       key={item.id} subsectionId={subsectionId}/>
                 } else {
-                    return <Input label={item.taskTitle} placeholder={'Введите сюда что-нибудь'} id={item.id}
-                                  isRequired={item.taskMandatory} key={item.id} onBlur={handleBlur}/>
+                    return <Input name={item.taskTitle} label={item.taskTitle} placeholder={'Введите сюда что-нибудь'}
+                                  id={item.id}
+                                  isRequired={item.taskMandatory} key={item.id} onBlur={handleBlur}
+                                  onChange={handleChange}/>
                 }
             })}
         </>
