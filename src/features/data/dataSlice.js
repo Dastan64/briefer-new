@@ -164,7 +164,7 @@ export const selectSecondaryFormFields = (state) => {
 
 export const selectAllCheckedTasks = (state) => {
     const res = [];
-    state.data.modifiedData.sections.map(section => {
+    state.data.modifiedData.sections.slice(2).map(section => {
         return section.subsections.map(ss => {
             return ss.tasks.filter(task => task.isChecked).map(task => res.push(task));
         })

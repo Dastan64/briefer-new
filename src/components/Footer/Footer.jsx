@@ -20,7 +20,6 @@ const Footer = ({ requiredFormData }) => {
     const allTaskSubsections = useSelector(selectAllTaskSubsections);
     const secondaryFormFields = useSelector(selectSecondaryFormFields);
     const allTasks = useSelector(selectAllCheckedTasks);
-
     const totalHours = useSelector(selectTotalTimeOfAllTasks);
 
     const isValid = useMemo(() => {
