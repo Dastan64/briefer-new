@@ -3,6 +3,7 @@ import styles from './BriefDataTable.module.css';
 import { declinate } from '../../utils/declinate';
 
 const BriefDataTable = ({ tasks, totalTime }) => {
+    const tasksFiltered = tasks?.filter(task => task.taskTitle.toLowerCase() !== 'не требуется');
     return (
         <div className={styles.table}>
             <div className={`${styles.row} ${styles.header}`}>
@@ -12,7 +13,7 @@ const BriefDataTable = ({ tasks, totalTime }) => {
                 <span>Время на выполнение</span>
             </div>
             <div className={styles.body}>
-                {tasks?.length > 0 && tasks.filter(task => task.taskTitle.toLowerCase() !== 'не требуется').map(task => {
+                {tasksFiltered?.length > 0 && tasksFiltered.map(task => {
                     return (
                         <div className={styles.row}>
                             <span className={styles.bold}>{task.parentSection}</span>
