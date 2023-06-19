@@ -46,4 +46,9 @@ export const briefSlice = createSlice({
     }
 })
 
+export const selectBriefTasks = ({ brief }) => {
+    const index = brief.data?.data.findIndex(item => item.taskType === 'radio');
+    return brief.data?.data.slice(index);
+}
+
 export default briefSlice.reducer;

@@ -1,0 +1,51 @@
+.table {
+    margin-top: 40px;
+    padding: 40px;
+    width: 100%;
+    border-radius: 24px;
+    background-color: var(--lightGray);
+}
+
+.body {
+    padding-bottom: 40px;
+    padding-top: 28px;
+    border-bottom: 1px solid var(--gray10);
+}
+
+.row {
+    padding: 12px 0;
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    color: var(--gray55);
+}
+
+.header {
+    padding: 0 0 36px;
+    border-bottom: 1px solid var(--gray10);
+    color: var(--blue);
+    font-size: calc(18rem / 16);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.bold {
+    font-weight: 700;
+    color: var(--textDark);
+}
+
+.footer {
+    padding-top: 40px;
+    text-align: right;
+}
+
+.footer p {
+    font-size: calc(18rem / 16);
+    line-height: 1.2;
+}
+
+.time {
+    color: var(--blue);
+    font-weight: 900;
+}
