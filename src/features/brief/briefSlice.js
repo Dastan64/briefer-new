@@ -14,7 +14,6 @@ export const fetchBriefTasks = createAsyncThunk('brief/fetchBriefTasks', async (
 const initialState = {
     timeToCreate: 0,
     data: null,
-    requiredFormData: [],
     sections: [],
     status: 'idle',
 }
@@ -30,16 +29,6 @@ export const briefSlice = createSlice({
             state.status = 'done';
             state.data = payload;
             state.timeToCreate = payload.time_to_create;
-
-            state.requiredFormData = Object.entries(payload).reduce((acc, [key, value]) => {
-                if (key === 'date_start' || key === 'date_end') {
-                    acc.push({ period: value });
-                } else if (key !== 'uuid' && key !== 'data') {
-                    acc.push({ [key]: value });
-                }
-                return acc;
-            }, []);
-
         }).addCase(fetchBriefTasks.rejected, (state) => {
             state.status = 'failed';
         })
@@ -49,6 +38,11 @@ export const briefSlice = createSlice({
 export const selectBriefTasks = ({ brief }) => {
     const index = brief.data?.data.findIndex(item => item.taskType === 'radio');
     return brief.data?.data.slice(index);
+}
+
+export const selectSecondaryFormData = ({ brief }) => {
+    const index = brief.data?.data.findIndex(item => item.taskType === 'radio');
+    return brief.data?.data.slice(0, index);
 }
 
 export default briefSlice.reducer;

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './Brief.module.css';
 
-import { fetchBriefTasks, selectBriefTasks } from '../../features/brief/briefSlice';
+import { fetchBriefTasks, selectBriefTasks, selectSecondaryFormData } from '../../features/brief/briefSlice';
 
 //Utils
 import { declinate } from '../../utils/declinate';
@@ -14,6 +14,7 @@ import { convertHoursToDays } from '../../utils/convertHoursToDays';
 import Input from '../../components/UI/Input/Input';
 import Textarea from '../../components/UI/Textarea/Textarea';
 import BriefDataTable from '../../components/BriefDataTable/BriefDataTable';
+import FileInfoInput from '../../components/FileInfoInput/FileInfoInput';
 
 const Brief = () => {
         const { id } = useParams();
@@ -22,6 +23,7 @@ const Brief = () => {
         const totalTime = useSelector(state => state.brief.timeToCreate);
         const totalTimeFormatted = totalTime > 24 ? convertHoursToDays(totalTime) : `${totalTime} ${declinate(totalTime, 'hours')}`
         const requiredFormData = useSelector(state => state.brief.data);
+        const secondaryFormData = useSelector(selectSecondaryFormData);
 
         useEffect(() => {
             dispatch(fetchBriefTasks(id))
@@ -41,6 +43,12 @@ const Brief = () => {
                            value={new Date(requiredFormData?.date_deadline).toLocaleDateString() || ''} isDisabled/>
                     <Input label={'Бренд'} value={requiredFormData?.vendor || ''} isDisabled/>
                     <Textarea label={'Описание'} value={requiredFormData?.description || ''} isDisabled/>
+                    {secondaryFormData?.length > 0 && secondaryFormData.map(field => {
+                        if (field.taskType === 'file' && field.value !== '') {
+                            return <FileInfoInput task={field}/>
+                        }
+                        return <Input value={field.value} label={field.taskTitle} isDisabled/>
+                    })}
                 </div>
                 <BriefDataTable tasks={tasks} totalTime={totalTimeFormatted}/>
             </main>

@@ -16,7 +16,7 @@ const Input = ({
                }) => {
     return (
         <div className={styles.inputContainer}>
-            <label htmlFor={id} className={styles.label}>{label}:
+            <label htmlFor={id} className={styles.label}>{label}
                 {isRequired && <span className={styles.labelAsterisk}>*</span>}
             </label>
             <input
