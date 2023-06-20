@@ -8,7 +8,6 @@ import Input from '../UI/Input/Input';
 import Textarea from '../UI/Textarea/Textarea';
 import CustomDatepicker from '../UI/CustomDatepicker/CustomDatepicker';
 
-
 const Form = ({ requiredFormData, onChange, onClose, children }) => {
     const orderers = useSelector(state => state.data.data.orderers);
     const vendors = useSelector(state => state.data.data.vendors);

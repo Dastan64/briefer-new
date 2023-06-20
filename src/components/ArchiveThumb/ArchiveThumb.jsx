@@ -8,7 +8,7 @@ const ArchiveThumb = ({ data }) => {
     const start = new Date(date_start).toLocaleDateString();
     const end = new Date(date_end).toLocaleDateString();
     const timeToDo = time_to_create ? `${time_to_create} ${declinate(time_to_create, 'hours')}` : 'неизвестно';
-    
+
     return (
         <li>
             <article className={styles.archbrief}>
@@ -16,7 +16,7 @@ const ArchiveThumb = ({ data }) => {
                     <div>
                         <h3 className={styles.title}>{title || 'Здесь должно было быть реальное название брифа'}</h3>
                         <div className={styles.info}>
-                            <span>Номер: <strong>{uuid.slice(0, 8)}</strong></span>
+                            <span>Номер: <strong>{uuid}</strong></span>
                             <span>Продолжительность: <strong>{start} - {end}</strong></span>
                             <span>Время на выполнение: <strong>{timeToDo}</strong></span>
                         </div>

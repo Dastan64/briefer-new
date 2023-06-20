@@ -14,9 +14,11 @@ const Archive = () => {
     // const categories = useSelector(state => state.data.data.categories);
     const categories = ['CE', 'IT', 'MDA', 'NE', 'SDA', 'TC'];
     const dispatch = useDispatch();
+
+    //Briefs stuff
     const briefs = useSelector(state => state.briefsList.briefs);
     const totalCount = useSelector(state => state.briefsList.totalCount);
-    const [filteredBriefs, setFilteredBriefs] = useState([]);
+    const pageCount = useSelector(state => state.briefsList.pages);
     const [filters, setFilters] = useState({
         value: '',
         date: '',
@@ -25,10 +27,10 @@ const Archive = () => {
 
     //Pagination stuff
     const itemsPerPage = 20;
+    const [currentPage, setCurrentPage] = useState(1);
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + itemsPerPage;
-    const currentItems = filteredBriefs.slice(itemOffset, endOffset);
-    const pageCount = Math.ceil(totalCount / itemsPerPage);
+    const currentItems = briefs.slice(itemOffset, endOffset);
 
     const handleChange = ({ target: { value } }) => {
         setFilters({
@@ -45,36 +47,20 @@ const Archive = () => {
     }
 
     const handleClose = (date) => {
+        console.log(new Date(date[0]).toLocaleDateString())
         setFilters({
             ...filters,
-            date: date[0],
+            date: new Date(date[0]),
         })
     }
 
-    const handlePageClick = (event) => {
-        const newOffset = (event.selected * itemsPerPage) % filteredBriefs.length;
-        console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
-        setItemOffset(newOffset);
+    const handlePageClick = ({ selected }) => {
+        setCurrentPage(selected + 1);
     };
 
     useEffect(() => {
-        const filtered = briefs.filter(brief => {
-            const byValue = !filters.value || brief.title?.toLowerCase().includes(filters.value?.toLowerCase().trim());
-            const byDate = !filters.date || new Date(brief.date_start).getTime() === new Date(filters.date).getTime();
-            return byValue && byDate;
-        });
-        setFilteredBriefs(filtered || briefs);
-    }, [briefs, filters.value, filters.date]);
-
-    useEffect(() => {
-        if (briefs?.length > 0) {
-            setFilteredBriefs(briefs)
-        }
-    }, [briefs])
-
-    useEffect(() => {
-        dispatch(fetchBriefs());
-    }, [])
+        dispatch(fetchBriefs({ currentPage, itemsPerPage }));
+    }, [currentPage, dispatch, itemsPerPage])
 
     return (
         <section>
@@ -89,9 +75,9 @@ const Archive = () => {
                 </ol>
             )}
 
-            {filteredBriefs.length === 0 && <NotFoundThumb title={'Не удалось найти запрошенный бриф'}
-                                                           subtitle={'Попробуйте изменить настройки поиска'}
-                                                           icon={'https://www.technodom.kz/under/briefer/not-found.svg'}/>}
+            {briefs.length === 0 && <NotFoundThumb title={'Не удалось найти запрошенный бриф'}
+                                                   subtitle={'Попробуйте изменить настройки поиска'}
+                                                   icon={'https://www.technodom.kz/under/briefer/not-found.svg'}/>}
             <ReactPaginate
                 activeLinkClassName={styles.active}
                 containerClassName={styles.pagination}
