@@ -4,3 +4,22 @@
     flex-wrap: wrap;
     margin-block-end: 24px;
 }
+
+.button {
+    flex-basis: 166px;
+    cursor: pointer;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    background-color: var(--gray3);
+    color: var(--gray20);
+}

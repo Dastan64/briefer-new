@@ -8,20 +8,20 @@ import ArchiveThumb from '../../components/ArchiveThumb/ArchiveThumb';
 import NotFoundThumb from '../../components/NotFoundThumb/NotFoundThumb';
 import SearchPanel from '../../components/SearchPanel/SearchPanel';
 
-import { fetchBriefs } from '../../features/briefsList/briefsListSlice';
+import { fetchBriefs, getFilteredBriefs } from '../../features/briefsList/briefsListSlice';
 
 const Archive = () => {
     // const categories = useSelector(state => state.data.data.categories);
     const categories = ['CE', 'IT', 'MDA', 'NE', 'SDA', 'TC'];
     const dispatch = useDispatch();
-
+    const [queryString, setQueryString] = useState('');
     //Briefs stuff
     const briefs = useSelector(state => state.briefsList.briefs);
     const totalCount = useSelector(state => state.briefsList.totalCount);
     const pageCount = useSelector(state => state.briefsList.pages);
     const [filters, setFilters] = useState({
         value: '',
-        date: '',
+        date_start: '',
         category: '',
     })
 
@@ -35,7 +35,7 @@ const Archive = () => {
     const handleChange = ({ target: { value } }) => {
         setFilters({
             ...filters,
-            value: value,
+            value,
         });
     }
 
@@ -47,16 +47,38 @@ const Archive = () => {
     }
 
     const handleClose = (date) => {
-        console.log(new Date(date[0]).toLocaleDateString())
         setFilters({
             ...filters,
-            date: new Date(date[0]),
+            date_start: date[0],
         })
+    }
+
+    const handleSendSearchRequest = () => {
+        if (queryString) {
+            dispatch(getFilteredBriefs(queryString))
+        }
     }
 
     const handlePageClick = ({ selected }) => {
         setCurrentPage(selected + 1);
     };
+
+    useEffect(() => {
+        const queryParams = Object.entries(filters).filter(([, value]) => value).map(([key, value]) => {
+            if (key === 'date_start' && Date.parse(value)) {
+                const date = new Date(value);
+                value = encodeURIComponent(date.toISOString());
+            } else {
+                value = decodeURIComponent(value);
+            }
+            return `${key}=${value}`;
+        }).join('&');
+
+        const queryString = queryParams.length > 0 ? `?${queryParams}` : '';
+        if (queryString) {
+            setQueryString(queryString);
+        }
+    }, [filters])
 
     useEffect(() => {
         dispatch(fetchBriefs({ currentPage, itemsPerPage }));
@@ -67,7 +89,7 @@ const Archive = () => {
             <h2 className={styles.title}>Архив</h2>
             <p className={styles.subtitle}>Здесь собраны все созданные брифы.</p>
             <SearchPanel filters={filters} categories={categories} onChange={handleChange} onSelect={handleSelect}
-                         onClose={handleClose}/>
+                         onClose={handleClose} onSearch={handleSendSearchRequest}/>
 
             {currentItems.length > 0 && (
                 <ol className={styles.list}>

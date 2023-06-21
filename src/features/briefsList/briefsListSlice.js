@@ -12,6 +12,18 @@ export const fetchBriefs = createAsyncThunk('brief/fetchBriefs', async ({ curren
     return await response.json();
 })
 
+export const getFilteredBriefs = createAsyncThunk('briefs/getFilteredBriefs', async (queryString) => {
+    const response = await fetch(`https://marketing-stage.technodom.kz/api/v2/technodom/brief/briefs${queryString}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Basic Y29udGVudF9zZXJ2aWNlX2FjY291bnQ6aDRyZDJyM20zbWIzcnA0c3N3MHJk',
+        },
+    })
+
+    return await response.json();
+})
+
 const initialState = {
     briefs: [],
     totalCount: 0,
@@ -33,8 +45,11 @@ export const briefsListSlice = createSlice({
                 state.totalCount = payload.total;
                 state.pages = payload.pages;
             })
-            .addCase(fetchBriefs.rejected, (state, { payload }) => {
+            .addCase(fetchBriefs.rejected, (state) => {
                 state.status = 'failed';
+            })
+            .addCase(getFilteredBriefs.fulfilled, (state, { payload }) => {
+                console.log(payload);
             })
     },
 })
