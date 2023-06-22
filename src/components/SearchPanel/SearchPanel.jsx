@@ -5,7 +5,7 @@ import IconInput from '../UI/IconInput/IconInput';
 import CustomDatepicker from '../UI/CustomDatepicker/CustomDatepicker';
 import SelectWrapper from '../SelectWrapper/SelectWrapper';
 
-const SearchPanel = ({ filters, categories, onChange, onSelect, onClose, onSearch }) => {
+const SearchPanel = ({ filters, orderers, onChange, onSelect, onClose, onSearch }) => {
     const isDisabled = Object.keys(filters).every(key => !filters[key]);
 
     return (
@@ -14,9 +14,9 @@ const SearchPanel = ({ filters, categories, onChange, onSelect, onClose, onSearc
                        placeholder={'Найти по названию или ID...'} onChange={onChange}/>
             <CustomDatepicker placeholder={'Выбери дату...'} iconDirection={'left'} onClose={onClose}
                               icon={'https://www.technodom.kz/under/briefer/calendar.svg'} mode="single"/>
-            <SelectWrapper name={'category'} data={categories}
-                           icon={'https://www.technodom.kz/under/briefer/category.svg'} placeholder={'Категория:'}
-                           onSelect={onSelect} value={filters.category} variant="secondary"/>
+            <SelectWrapper name={'orderer'} data={orderers}
+                           icon={'https://www.technodom.kz/under/briefer/category.svg'} placeholder={'Заказчик:'}
+                           onSelect={onSelect} value={filters.orderer} variant="secondary"/>
             <button disabled={isDisabled} className={styles.button} type="button" onClick={onSearch}>Найти</button>
         </div>
     );

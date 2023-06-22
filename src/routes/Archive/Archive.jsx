@@ -12,7 +12,7 @@ import { fetchBriefs, getFilteredBriefs } from '../../features/briefsList/briefs
 
 const Archive = () => {
     // const categories = useSelector(state => state.data.data.categories);
-    const categories = ['CE', 'IT', 'MDA', 'NE', 'SDA', 'TC'];
+    const orderers = ['Alexandr'];
     const dispatch = useDispatch();
     const [queryString, setQueryString] = useState('');
     //Briefs stuff
@@ -20,9 +20,9 @@ const Archive = () => {
     const totalCount = useSelector(state => state.briefsList.totalCount);
     const pageCount = useSelector(state => state.briefsList.pages);
     const [filters, setFilters] = useState({
-        value: '',
+        uuid_or_title: '',
         date_start: '',
-        category: '',
+        orderer: '',
     })
 
     //Pagination stuff
@@ -35,7 +35,7 @@ const Archive = () => {
     const handleChange = ({ target: { value } }) => {
         setFilters({
             ...filters,
-            value,
+            uuid_or_title: value,
         });
     }
 
@@ -88,13 +88,13 @@ const Archive = () => {
         <section>
             <h2 className={styles.title}>Архив</h2>
             <p className={styles.subtitle}>Здесь собраны все созданные брифы.</p>
-            <SearchPanel filters={filters} categories={categories} onChange={handleChange} onSelect={handleSelect}
+            <SearchPanel filters={filters} orderers={orderers} onChange={handleChange} onSelect={handleSelect}
                          onClose={handleClose} onSearch={handleSendSearchRequest}/>
 
             {currentItems.length > 0 && (
-                <ol className={styles.list}>
+                <ul className={styles.list}>
                     {currentItems.map(brief => (<ArchiveThumb data={brief} key={brief.uuid}/>))}
-                </ol>
+                </ul>
             )}
 
             {briefs.length === 0 && <NotFoundThumb title={'Не удалось найти запрошенный бриф'}
