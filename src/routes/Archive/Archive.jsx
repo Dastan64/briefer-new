@@ -18,7 +18,6 @@ const Archive = () => {
 
     //Briefs stuff
     const briefs = useSelector(state => state.briefsList.briefs);
-    const totalCount = useSelector(state => state.briefsList.totalCount);
     const pageCount = useSelector(state => state.briefsList.pages);
     const [filters, setFilters] = useState({
         uuid_or_title: '',
