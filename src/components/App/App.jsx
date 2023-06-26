@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer';
 
 import { fetchData, selectSecondaryFormDataSubsection } from '../../features/data/dataSlice';
 import SecondaryForm from '../SecondaryForm/SecondaryForm';
+import { createDate } from '../../utils/createDate';
 
 const App = () => {
     const data = useSelector(state => state.data.modifiedData);
@@ -34,8 +35,8 @@ const App = () => {
 
     const setDate = (dates) => {
         if (dates.length > 1) {
-            const date_start = new Date(dates[0]).toISOString().replace('Z', '');
-            const date_end = new Date(dates[1]).toISOString().replace('Z', '');
+            const date_start = createDate(dates[0]);
+            const date_end = createDate(dates[1]);
             setRequiredFormData({
                 ...requiredFormData,
                 date_start,
@@ -44,7 +45,7 @@ const App = () => {
         } else {
             setRequiredFormData({
                 ...requiredFormData,
-                date_deadline: new Date(dates[0]).toISOString().replace('Z', ''),
+                date_deadline: createDate(dates[0])
             })
         }
     }

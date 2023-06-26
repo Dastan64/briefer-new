@@ -9,6 +9,7 @@ import NotFoundThumb from '../../components/NotFoundThumb/NotFoundThumb';
 import SearchPanel from '../../components/SearchPanel/SearchPanel';
 
 import { fetchBriefs, getFilteredBriefs } from '../../features/briefsList/briefsListSlice';
+import { createDate } from '../../utils/createDate';
 
 const Archive = () => {
     // const categories = useSelector(state => state.data.data.categories);
@@ -49,7 +50,7 @@ const Archive = () => {
     const handleClose = (date) => {
         setFilters({
             ...filters,
-            date_start: new Date(date[0]).toISOString().replace('Z', ''),
+            date_start: createDate(date[0]),
         })
     }
 
