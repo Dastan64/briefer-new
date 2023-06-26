@@ -31,7 +31,7 @@ const Archive = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + itemsPerPage;
-    const currentItems = briefs.slice(itemOffset, endOffset);
+    const currentItems = briefs?.slice(itemOffset, endOffset);
 
     const handleChange = ({ target: { value } }) => {
         setFilters({
@@ -89,15 +89,15 @@ const Archive = () => {
             <SearchPanel filters={filters} orderers={orderers} onChange={handleChange} onSelect={handleSelect}
                          onClose={handleClose} onSearch={handleSendSearchRequest}/>
 
-            {currentItems.length > 0 && (
+            {currentItems?.length > 0 && (
                 <ul className={styles.list}>
                     {currentItems.map(brief => (<ArchiveThumb data={brief} key={brief.uuid}/>))}
                 </ul>
             )}
 
-            {briefs.length === 0 && <NotFoundThumb title={'Не удалось найти запрошенный бриф'}
-                                                   subtitle={'Попробуйте изменить настройки поиска'}
-                                                   icon={'https://www.technodom.kz/under/briefer/not-found.svg'}/>}
+            {briefs?.length === 0 && <NotFoundThumb title={'Не удалось найти запрошенный бриф'}
+                                                    subtitle={'Попробуйте изменить настройки поиска'}
+                                                    icon={'https://www.technodom.kz/under/briefer/not-found.svg'}/>}
             <ReactPaginate
                 activeLinkClassName={styles.active}
                 containerClassName={styles.pagination}

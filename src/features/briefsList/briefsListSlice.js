@@ -29,7 +29,7 @@ export const getFilteredBriefs = createAsyncThunk('briefs/getFilteredBriefs', as
 })
 
 const initialState = {
-    briefs: [],
+    briefs: null,
     totalCount: 0,
     pages: 0,
     status: 'idle',
