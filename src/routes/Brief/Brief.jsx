@@ -46,8 +46,11 @@ const Brief = () => {
                     {secondaryFormData?.length > 0 && secondaryFormData.map(field => {
                         if (field.taskType === 'file' && field.value !== '') {
                             return <FileInfoInput task={field} key={uuidv4()}/>
+                        } else if (field.value) {
+                            return <Input value={field.value} label={field.taskTitle} isDisabled key={uuidv4()}/>
+                        } else {
+                            return null;
                         }
-                        return <Input value={field.value} label={field.taskTitle} isDisabled key={uuidv4()}/>
                     })}
                 </div>
                 <BriefDataTable tasks={tasks} totalTime={totalTimeFormatted}/>
