@@ -13,7 +13,7 @@ import { createDate } from '../../utils/createDate';
 
 const Archive = () => {
     // const categories = useSelector(state => state.data.data.categories);
-    const orderers = ['Alexandr'];
+    const orderers = ['Alexandr', 'Алмагуль Магамбетова', 'Идрисов Дияр', 'Ерлан Нусубалиев Геймер №1 в Казахстане'];
     const dispatch = useDispatch();
     const [queryString, setQueryString] = useState('');
 
