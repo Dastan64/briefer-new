@@ -15,6 +15,7 @@ const Archive = () => {
     const orderers = ['Alexandr'];
     const dispatch = useDispatch();
     const [queryString, setQueryString] = useState('');
+
     //Briefs stuff
     const briefs = useSelector(state => state.briefsList.briefs);
     const totalCount = useSelector(state => state.briefsList.totalCount);
@@ -49,13 +50,13 @@ const Archive = () => {
     const handleClose = (date) => {
         setFilters({
             ...filters,
-            date_start: date[0],
+            date_start: new Date(date[0]).toISOString().replace('Z', ''),
         })
     }
 
     const handleSendSearchRequest = () => {
         if (queryString) {
-            dispatch(getFilteredBriefs(queryString))
+            dispatch(getFilteredBriefs({ queryString, currentPage, itemsPerPage }))
         }
     }
 
@@ -65,11 +66,8 @@ const Archive = () => {
 
     useEffect(() => {
         const queryParams = Object.entries(filters).filter(([, value]) => value).map(([key, value]) => {
-            if (key === 'date_start' && Date.parse(value)) {
-                const date = new Date(value);
-                value = encodeURIComponent(date.toISOString());
-            } else {
-                value = decodeURIComponent(value);
+            if (key !== 'date_start' && !Date.parse(value)) {
+                value = encodeURIComponent(value);
             }
             return `${key}=${value}`;
         }).join('&');

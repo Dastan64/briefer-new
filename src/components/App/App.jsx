@@ -33,10 +33,9 @@ const App = () => {
     }
 
     const setDate = (dates) => {
-        console.log(dates)
         if (dates.length > 1) {
-            const date_start = new Date(dates[0]);
-            const date_end = new Date(dates[1]);
+            const date_start = new Date(dates[0]).toISOString().replace('Z', '');
+            const date_end = new Date(dates[1]).toISOString().replace('Z', '');
             setRequiredFormData({
                 ...requiredFormData,
                 date_start,
@@ -45,7 +44,7 @@ const App = () => {
         } else {
             setRequiredFormData({
                 ...requiredFormData,
-                date_deadline: new Date(dates[0]),
+                date_deadline: new Date(dates[0]).toISOString().replace('Z', ''),
             })
         }
     }

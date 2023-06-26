@@ -12,8 +12,12 @@ export const fetchBriefs = createAsyncThunk('brief/fetchBriefs', async ({ curren
     return await response.json();
 })
 
-export const getFilteredBriefs = createAsyncThunk('briefs/getFilteredBriefs', async (queryString) => {
-    const response = await fetch(`https://marketing-stage.technodom.kz/api/v2/technodom/brief/briefs${queryString}`, {
+export const getFilteredBriefs = createAsyncThunk('briefs/getFilteredBriefs', async ({
+                                                                                         queryString,
+                                                                                         currentPage: page,
+                                                                                         itemsPerPage: size
+                                                                                     }) => {
+    const response = await fetch(`https://marketing-stage.technodom.kz/api/v2/technodom/brief/briefs${queryString}&page=${page}&size=${size}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
