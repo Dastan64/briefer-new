@@ -45,9 +45,9 @@ const Brief = () => {
                     <Textarea label={'Описание'} value={requiredFormData?.description || ''} isDisabled/>
                     {secondaryFormData?.length > 0 && secondaryFormData.map(field => {
                         if (field.taskType === 'file' && field.value !== '') {
-                            return <FileInfoInput task={field}/>
+                            return <FileInfoInput task={field} key={uuidv4()}/>
                         }
-                        return <Input value={field.value} label={field.taskTitle} isDisabled/>
+                        return <Input value={field.value} label={field.taskTitle} isDisabled key={uuidv4()}/>
                     })}
                 </div>
                 <BriefDataTable tasks={tasks} totalTime={totalTimeFormatted}/>

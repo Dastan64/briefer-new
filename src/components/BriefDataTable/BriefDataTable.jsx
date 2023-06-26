@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './BriefDataTable.module.css';
 import { declinate } from '../../utils/declinate';
+import { v4 as uuidv4 } from 'uuid';
 
 const BriefDataTable = ({ tasks, totalTime }) => {
     const tasksFiltered = tasks?.filter(task => task.taskTitle.toLowerCase() !== 'не требуется');
@@ -15,7 +16,7 @@ const BriefDataTable = ({ tasks, totalTime }) => {
             <div className={styles.body}>
                 {tasksFiltered?.length > 0 && tasksFiltered.map(task => {
                     return (
-                        <div className={styles.row}>
+                        <div className={styles.row} key={uuidv4()}>
                             <span className={styles.bold}>{task.parentSection}</span>
                             <span>{task.taskTitle}</span>
                             <span>{task.taskDescription}</span>

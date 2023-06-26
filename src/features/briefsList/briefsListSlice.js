@@ -53,7 +53,10 @@ export const briefsListSlice = createSlice({
                 state.status = 'failed';
             })
             .addCase(getFilteredBriefs.fulfilled, (state, { payload }) => {
-                console.log(payload);
+                state.status = 'done';
+                state.briefs = payload.items;
+                state.totalCount = payload.total;
+                state.pages = payload.pages;
             })
     },
 })
