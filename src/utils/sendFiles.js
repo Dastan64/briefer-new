@@ -13,6 +13,8 @@ export const sendFiles = async (filesCollection, callback) => {
         }).then(response => response.json()).catch(error => console.log(error))
     })
     const data = await Promise.all(promises);
-    const uuids = data.map(obj => obj.uuid);
-    callback(uuids);
+    if (data) {
+        const uuids = data.map(obj => obj?.uuid);
+        callback(uuids);
+    }
 }

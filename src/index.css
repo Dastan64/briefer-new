@@ -91,7 +91,7 @@ input, button {
 
 .flatpickr-input_icon_left {
     background-position: left 16px center;
-    padding-left: calc(var(--spacing) + 28px);
+    padding-left: 44px;
 }
 
 .flatpickr-input_outlined {
